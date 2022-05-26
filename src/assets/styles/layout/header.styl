@@ -1,0 +1,38 @@
+.header
+  &__inner
+    padding var(--offset-big) 0
+    justify-content space-between
+
+  &__inner,
+  &__wrapper
+    display flex
+    align-items center
+
+
+  &__text
+    pos relative
+    width vw(227)
+    padding-left vw(27)
+    margin-left vw(24)
+
+    &::before
+      content ''
+      pos absolute
+      top 50%
+      left 0
+      transform translateY(-50%)
+      width vw(3)
+      height vw(40)
+      background-color $black
+
+  &__location
+    margin-left vw(120)
+
+  &__profile
+
+    &-avatar
+      width vw(48)
+      height vw(48)
+      object-fit cover
+      border-radius 50%
+

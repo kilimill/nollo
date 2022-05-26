@@ -1,0 +1,206 @@
+html,
+body
+	height 100%
+	ff $inter
+	font-weight 400
+	font-size vw(14)
+	line-height vw(14)
+	color #222222
+	background-color #E5E5E5
+
+.opacity 
+	&-50 
+		opacity .5
+	
+	&-70 
+		opacity .7
+
+	&-30
+		opacity .3
+
+.align
+	&-ctr
+		text-align center
+
+.mb 
+	&-4
+		margin-bottom vw(4)
+
+	&-8 
+		margin-bottom vw(8)
+
+	&-16
+		margin-bottom vw(16)
+
+	&-24 
+		margin-bottom vw(24)
+
+	&-32 
+		margin-bottom vw(32)
+
+	&-40
+		margin-bottom vw(40)
+
+.ml
+	&-8 
+		margin-left vw(8)
+
+	&-16
+		margin-left vw(16)
+
+	&-24 
+		margin-left vw(24)
+
+	&-32 
+		margin-left vw(32)
+
+	&-40
+		margin-left vw(40)
+
+.mr
+	&-8 
+		margin-right vw(8)
+
+	&-16
+		margin-right vw(16)
+
+	&-24 
+		margin-right vw(24)
+
+	&-32 
+		margin-right vw(32)
+
+	&-40
+		margin-right vw(40)
+
+// .main 
+// 	&__content
+.container
+	padding 0 vw(64)
+
+	&-mid
+		width vw(894)
+		padding 0 vw(15)
+		margin 0 auto
+
+.info
+	display flex
+
+	&__inner
+		width vw(752)
+		margin-right var(--offset-up-mid)
+
+.performance
+	display flex
+	justify-content space-between
+	align-items center
+	
+	&__item
+		width vw(192)
+		height vw(176)
+		margin-left var(--offset-up-mid)
+		display flex
+		justify-content center
+		flex-direction column
+		padding var(--offset-big)
+		background-color #fff
+		border-radius vw(24)
+
+		&:first-child
+			display block
+			width vw(880)
+			margin-left 0
+
+.logo
+	&__img
+		width vw(88)
+		height vw(56)
+		object-fit cover
+
+.wrapper
+	display flex
+
+	&_v-ctr
+		align-items center
+
+	&_h-btw
+		justify-content space-between	
+
+
+.details
+	display flex
+
+	&__item
+		margin-left var(--offset-mid)
+		display flex
+		align-items center
+
+		&:first-child
+			margin-left 0
+
+	.icon
+		width vw(16)
+		height vw(16)
+		margin-right vw(8)
+
+		path
+			stroke #444444
+
+	.controls_small
+		color #444444
+
+.icon
+	width vw(24)
+	height vw(24)
+
+	path 
+		stroke $black
+
+	rect,
+	circle
+		fill $black
+
+.border-btm
+	pos relative
+	padding-bottom vw(25)
+
+	&:before
+		content ''
+		pos absolute
+		bottom 0
+		left 0
+		width 100%
+		height 1px
+		background-color #222222
+		opacity 0.32
+
+.popular
+	&__item
+		position relative
+		display flex
+		align-items flex-end
+		overflow hidden
+		background-size cover
+		background-position center
+		background-repeat no-repeat
+
+		&::before
+			content ''
+			position absolute
+			width 100%
+			height 100%
+			bottom 0
+			left 0
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 43.75%, rgba(0, 0, 0, 0.72) 100%)
+
+
+		&-info
+			position relative
+			z-index 1
+			color #fff
+
+.total 
+	border-radius: vw(8);
+	padding: vw(8) vw(16);
+	background-color: #fff;
+	display: flex;

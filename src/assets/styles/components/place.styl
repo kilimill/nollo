@@ -1,0 +1,91 @@
+.place
+  padding-bottom vw(107)
+
+  &__wrapper
+    display flex
+    justify-content space-between
+
+  &__content
+    width vw(864)
+    border-radius vw(16)
+    padding var(--offset-up-mid)
+    background-color #fff
+
+  &__controls
+    display flex
+
+    &-btn
+      display flex
+      align-items center
+      padding vw(14) vw(20)
+      border-radius var(--radius)
+      color $green
+      background-color transparent
+      transition background-color .3s, color .3s
+      margin-bottom var(--offset-mid)
+
+      &:hover
+        background-color #BFFDE3
+        color #049A5B
+
+        .place__controls-ico
+          circle,
+          path
+            stroke #049A5B
+
+
+      &:first-child
+        margin-right var(--offset-mid)
+
+    &-ico 
+      width vw(16)
+      height vw(16)
+
+      circle,
+      path
+        transition stroke .3s
+        stroke $green
+
+  &__form
+    &-inner
+      margin-bottom var(--offset-mid)
+
+  &__booking
+    display flex
+    height vw(196)
+    margin-bottom vw(53)
+    background-color $gray
+    border-radius var(--radius)
+
+    &-img
+      width vw(224)
+      border-radius var(--radius)
+
+    &-box
+      display flex
+      flex-direction column
+      justify-content space-between
+      padding var(--offset-mid) var(--offset-up-mid)
+
+    .btn
+      line-height vw(48)
+
+      
+
+  &__service
+    &-inner
+      flex-wrap wrap
+      
+    &-item
+      margin-left var(--offset-mid)
+
+      &:first-child
+        margin-left 0
+
+  &__conditions
+    margin-bottom vw(48)
+
+
+  // &__aside
+
+  
