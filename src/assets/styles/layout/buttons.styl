@@ -1,11 +1,11 @@
 .btn
-  background-color $green
+  display flex
+  align-items center
   padding 0 vw(34)
   font-size vw(16)
   line-height vw(64)
   font-weight 500
   border-radius var(--radius)
-  color #fff
 
   &[disabled]
     opacity .5
@@ -17,3 +17,23 @@
     background-color #FFFFFF
     border: 2px solid #BFFDE3
     color $green
+
+  &_green
+    background-color $green
+    color #fff
+
+  &_red
+    color #F72921
+
+    .icon 
+      path 
+        stroke #F72921
+
+  &_control
+    padding 0 17px
+
+    .icon
+      width 16px
+      height 16px
+      margin-right 16px
+    

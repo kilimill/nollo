@@ -8,7 +8,12 @@ section.create
 
         //- BasicData
         //- Categories
-        Photos
+        //- Photos
+        //- Addrress
+        //- Contacts
+        //- Rooms
+        //- Waters
+        Info
 
 </template>
 
@@ -17,7 +22,12 @@ section.create
 import Aside from "@/layout/Aside"
 // import BasicData from "@/components/create/Index"
 // import Categories from "@/components/create/Categories"
-import Photos from "@/components/create/Photos"
+// import Photos from "@/components/create/Photos"
+// import Addrress from "@/components/create/Address"
+// import Contacts from "@/components/create/Contacts"
+// import Rooms from "@/components/create/Rooms"
+// import Waters from "@/components/create/Waters"
+import Info from "@/components/create/Info"
 </script>
 
 <style scoped lang='stylus'>

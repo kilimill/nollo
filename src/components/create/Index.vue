@@ -13,7 +13,10 @@ section.create__data
       option adwdawd
 
   
-  ScrollableDecorator(ref="scroll")
+  ScrollableDecorator(ref="scroll"
+    container="dataTermsContainer",
+    content="dataWayContent",
+    scrollbar="dataWayScroll")
     .create__data-description.form__text(contenteditable="true")
 
 </template>
@@ -25,5 +28,6 @@ import ScrollableDecorator from '@/layout/ScrollableDecorator.vue'
 <style setup lang='stylus'>
 .create__data
   &-description
+    overflow: hidden
     height: 200px
 </style>

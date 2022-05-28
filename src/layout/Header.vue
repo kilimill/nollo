@@ -28,3 +28,10 @@ header.header
   
 </script>
 
+<style scoped lang='stylus'>
+.header 
+  position relative
+  z-index 10
+
+</style>
+

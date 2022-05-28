@@ -1,5 +1,5 @@
 <template lang="pug">
-main.main
+main.main.log-in
   Header
   .main__content
     transition(name="fade", mode="out-in")
@@ -16,3 +16,10 @@ import Header from "@/layout/Header";
 //   return useRoute().meta.key
 // });
 </script>
+
+<style scoped>
+.main {
+  position: relative;
+  height: 100%;
+}
+</style>

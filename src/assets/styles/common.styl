@@ -8,6 +8,20 @@ body
 	color #222222
 	background-color #E5E5E5
 
+#app
+	min-height 100%
+
+.main
+	min-height 100vh
+	height 100%
+	
+	&.log-in
+		background url('~@/assets/img/details/bg-log.jpg')
+		background-size contain
+		background-repeat no-repeat
+		background-position right bottom
+
+
 .opacity 
 	&-50 
 		opacity .5
@@ -153,12 +167,21 @@ body
 	width vw(24)
 	height vw(24)
 
-	path 
+	path,
+	rect
 		stroke $black
 
-	rect,
 	circle
 		fill $black
+
+	&_green
+		path,
+		rect
+			stroke $green
+
+		circle
+			fill $green
+
 
 .border-btm
 	pos relative

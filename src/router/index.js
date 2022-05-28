@@ -73,6 +73,51 @@ const routes = [
       key: 7
     }
   },
+  {
+    path: '/added',
+    name: 'Added',
+    component: () => import('@/views/profile/Added'),
+    meta: {
+      title: 'Added',
+      key: 8
+    }
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: () => import('@/views/Terms'),
+    meta: {
+      title: 'Terms',
+      key: 9
+    }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/About'),
+    meta: {
+      title: 'About',
+      key: 9
+    }
+  },
+  {
+    path: '/contacts',
+    name: 'Contacts',
+    component: () => import('@/views/Contacts'),
+    meta: {
+      title: 'Contacts',
+      key: 9
+    }
+  },
+  {
+    path: '/authorization',
+    name: 'Authorization',
+    component: () => import('@/views/Authorization'),
+    meta: {
+      title: 'Authorization',
+      key: 10
+    }
+  },
 ]
 
 const router = createRouter({

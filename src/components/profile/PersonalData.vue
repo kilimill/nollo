@@ -31,7 +31,7 @@ section.personal
       label.form__label
         input.form__input(placeholder="Новый пароль ещё раз") 
 
-    button.btn Сохранить изменения  
+    button.btn.btn_green Сохранить изменения  
 
 
 </template>

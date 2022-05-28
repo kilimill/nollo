@@ -1,16 +1,17 @@
 <template lang="pug">
 .accordion 
-  h4.title_middle.mb-32 Условия проживания
+  //- h4.title_middle.mb-32 Условия проживания
 
-  .accordion__item(v-for="(condition, i) in conditions", :key="i")
-    .accordion__top.wrapper.wrapper_h-btw
-      h3.controls_bigger {{ condition.title }}
+  .accordion__item(v-for="(condition, i) in conditions", :key="i" @click="accordionToggle($event)")
+    .accordion__item-inner
+      .accordion__top.wrapper.wrapper_h-btw
+        h3.controls_bigger {{ condition.title }}
 
-      .accordion__btns
-        button.accordion__btn(@click="accordionToggle(i)")
+        .accordion__btns
+          button.accordion__btn
 
-    .accordion__bottom
-      p.text__middle {{ condition.description }}
+      .accordion__bottom
+        p.text__middle {{ condition.description }}
 </template>
 
 <script setup>
@@ -37,18 +38,19 @@ const conditions = reactive([
       "Незаездом считается прибытие гостя после 00:00 часов следующего дня. Штраф за незаезд — % от суммы предоплаты.",
   },
 ]);
-const accordionToggle = (i) => {
+const accordionToggle = (e) => {
+  const currentItem = e.target
   const items = document.querySelectorAll(".accordion__item");
-  items.forEach((element, index) => {
-    if (index !== i) {
+  items.forEach((element) => {
+    if (element !== currentItem) {
       element.classList.remove("open");
     }
   });
 
-  if (!items[i].classList.contains("open")) {
-    items[i].classList.add("open");
+  if (!currentItem.classList.contains("open")) {
+    currentItem.classList.add("open");
   } else {
-    items[i].classList.remove("open");
+    currentItem.classList.remove("open");
   }
 };
 </script>
