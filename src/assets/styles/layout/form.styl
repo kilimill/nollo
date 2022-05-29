@@ -6,8 +6,11 @@
     border-radius vw(16)
     background-color $gray
   
-  &__description-text
-    height 100%
+  &__description
+    word-break: break-word;
+
+    &-text
+      height 100%
 
   &__label
     display flex
@@ -118,6 +121,7 @@
 
   &__checkbox-label
     cursor pointer
+
     span {
       display: inline-flex;
       align-items: center;
@@ -150,7 +154,7 @@
     }
 
     input:not(:disabled):active+span::before {
-      background-color: #b3d7ff;
+      background-color: #BFFDE3;
       border-color: #BFFDE3;
     }
 

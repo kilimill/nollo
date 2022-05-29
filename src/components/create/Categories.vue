@@ -1,6 +1,6 @@
 <template lang="pug">
 section.create__categories
-  h2.title_up-middle Категории
+  h2.title_up-middle.mb-12 Категории
   p.text_middle.opacity-50.mb-24 Отметьте категории, которые подходят вашей турбазе
 
   ol.create__categories-list

@@ -1,5 +1,5 @@
 <template lang="pug">
-main.main.log-in
+main.main
   Header
   .main__content
     transition(name="fade", mode="out-in")
