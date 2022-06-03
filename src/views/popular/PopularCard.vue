@@ -10,7 +10,7 @@
 
     form.form.wrapper
       label.form__label.popular-card__label
-        SearchIcon.form__label-icon
+        SearchIcon.icon.form__label-icon
         input.form__input.controls_middle(placeholder="Место или наименование турбазы")
 
       label.form__label.popular-card__label

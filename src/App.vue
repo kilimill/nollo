@@ -1,6 +1,6 @@
 <template lang="pug">
 main.main
-  //- img.bg_gradient(src="@/assets/img/bg.jpg")
+  img.bg_gradient(src="@/assets/img/bg.jpg")
   Header
   .main__content
     transition(name="fade", mode="out-in")

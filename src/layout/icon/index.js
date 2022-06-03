@@ -38,7 +38,21 @@ export { default as VkIcon } from './social/VkIcon.vue'
 export { default as GoogleIcon } from './social/GoogleIcon.vue'
 
 // filters icons
-export { default as Active } from './filters/Active.vue'
+export { default as ActiveIcon } from './filters/ActiveIcon.vue'
+export { default as Barrelcon } from './filters/Barrelcon.vue'
+export { default as BeachIcon } from './filters/BeachIcon.vue'
+export { default as CampIcon } from './filters/CampIcon.vue'
+export { default as CorpIcon } from './filters/CorpIcon.vue'
+export { default as EctIcon } from './filters/EctIcon.vue'
+export { default as FishingIcon } from './filters/FishingIcon.vue'
+export { default as HikeIcon } from './filters/HikeIcon.vue'
+export { default as HuntIcon } from './filters/HuntIcon.vue'
+export { default as PartyIcon } from './filters/PartyIcon.vue'
+export { default as UnderwaterIcon } from './filters/UnderwaterIcon.vue'
+
+
+
+
 export { default as PlusIcon } from './PlusIcon.vue'
 export { default as MinusIcon } from './MinusIcon.vue'
 

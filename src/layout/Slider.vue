@@ -15,7 +15,7 @@
 
         img.slider__show-img(:src="image")
 
-    .slider__swiper.swiper-container(ref="calendarSliderRef")
+    .slider__swiper.swiper-container.hidden(ref="calendarSliderRef")
       .swiper-wrapper
         .swiper-slide.slider__slide(
           v-for="(item, i) of images",
@@ -53,12 +53,14 @@ const options = reactive({
 const closePopupSlider = () => {
     document.body.classList.remove('open')
     swaper.params.direction = "horizontal";
+    calendarSliderRef.value.classList.add('hidden')
     // swaper.update()
 };
 
 const openPopupSlider = () => {
   document.body.classList.add('open')
   swaper.params.direction = "vertical";
+  calendarSliderRef.value.classList.remove('hidden')
   // swaper.update()
 }
 

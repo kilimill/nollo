@@ -2,7 +2,7 @@
   <div class="scrollable-decoration" :class="{scrolling}">
     <div class="scrollable-container" ref="container"
          @wheel.passive="wheel($event.deltaY)"
-         @scroll.prevent.stop="wheel(0)">
+         @scroll.prevent.stop="wheel(0)" @mouseover="sefs" @mouseleave="wadawd">
       <div class="scrollable-content" ref="content">
         <slot></slot>
       </div>
@@ -79,6 +79,16 @@ export default {
   },
 
   methods: {
+    sefs() {
+      // this.$refs.container.style.overflow
+      // document.body.style.overflowY = 'hidden'
+      console.log(document.body.style.overflow)
+    },
+    wadawd() {
+      // this.$refs.container.style.overflow
+      // document.body.style.overflowY = 'auto'
+      console.log(document.body.style.overflow)
+    },
     /**
      * @param {Number} delta
      **/
@@ -171,17 +181,20 @@ export default {
 $scroll-width = 5px;
 $scroll-color = rgba(0, 0, 0, 0.33);
 $track-color = rgba(255, 255, 255, 0.33);
-
+.form__description-text {
+  padding 20px 25px
+}
 .scrollable-decoration {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   max-height: 100%;
+  height 100%
   padding-right: 0;
   overflow: hidden;
   position: relative;
   z-index: 1;
-
+  
   .scroll-holder {
     background-color: $scroll-color;
     display: none;
@@ -213,6 +226,7 @@ $track-color = rgba(255, 255, 255, 0.33);
     flex-grow: 1;
     overflow: hidden;
     max-height: 100%;
+    height 100%
   }
 }
 </style>

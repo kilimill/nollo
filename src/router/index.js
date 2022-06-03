@@ -118,6 +118,15 @@ const routes = [
       key: 10
     }
   },
+  {
+    path: '/found',
+    name: 'Found',
+    component: () => import('@/views/Found'),
+    meta: {
+      title: 'Found',
+      key: 11
+    }
+  },
 ]
 
 const router = createRouter({

@@ -14,7 +14,7 @@ section.contacts
           input.form__input(placeholder="Телефон или e-mail")
 
       .form__description
-        ScrollableDecorator.mb-32(ref="scroll")
+        ScrollableDecorator(ref="scroll")
           .form__description-text(contenteditable="true")
       
       button.btn.btn_green 
@@ -31,6 +31,9 @@ import ScrollableDecorator from "@/layout/ScrollableDecorator.vue";
   .form__description
     margin 32px 0 40px
     height 108px
+
+    &-text
+      min-height: 108px
 
   .btn
     display block
