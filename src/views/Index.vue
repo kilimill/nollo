@@ -1,6 +1,23 @@
 <template lang="pug">
 .index
   .container
+    section.index__head
+      h1.title_bigger.mb-24 Найдите идеальное место для своего отдыха
+      p.text_middle Выберите для этого все необходимые параметры поиска
+
+    .index__search
+      form.form.index__form
+        label.form__label.index__form-place
+          SearchIcon.icon.form__label-icon
+          input.form__input(placeholder="Пароль")
+
+        DataPicker
+
+        CustomSelect
+
+        button.btn.btn_green Найти
+
+
     section.performance
       .performance__item
         h2.title_middle.mb-16 Наша миссия
@@ -28,6 +45,8 @@
 <script>
 import Catalog from "@/components/Catalog";
 import BannerSub from "@/layout/BannerSub";
+import DataPicker from "@/layout/DataPicker";
+import CustomSelect from "@/layout/CustomSelect";
 export default {
   name: "HomePage",
   component: {
@@ -38,7 +57,41 @@ export default {
 </script>
 
 <script setup>
+import {SearchIcon} from '@/layout/icon/index'
 // script setup logic
 </script>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+@import '@/assets/styles/mixins.styl'
+.index
+  &__head
+    width vw(600)
+    text-align: center
+    margin 48px auto 
+
+  &__search
+    margin 48px 0 80px
+
+  &__form
+    width vw(1152)
+    margin 0 auto
+    display flex
+    justify-content space-between
+    background-color #fff
+    padding 24px 32px
+    border-radius: 24px;
+    box-shadow: 0px 15px 39px -31px rgba(0, 0, 0, 0.11);
+
+    &-place
+      width: vw(390)
+
+    .calendar 
+      width vw(266)
+
+    .select 
+      width: vw(192)
+      margin 0
+
+  .performance
+    margin-bottom 80px
+</style>

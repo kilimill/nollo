@@ -51,7 +51,8 @@ section.booking
 
       Accordion
 
-      button.btn.btn_green.booking__btn Отправить заявку
+      button.btn.btn_green.booking__btn 
+        span.btn__content Отправить заявку
 
       p.controls_middle.align-ctr Для отправки заявки необходимо
         a.booking__link зарегистрироваться

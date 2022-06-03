@@ -30,7 +30,8 @@ section.authorization
           RefreshIcon.icon.icon_green
           p.controls_middle.opacity-70 Восстановить пароль
 
-        button.authorization__sub.btn.btn_green Войти
+        button.authorization__sub.btn.btn_green 
+          span.btn__content Войти
 
       form.authorization__form(v-if="!ss")
         label.form__label.mb-24
@@ -69,10 +70,22 @@ section.authorization
               input.form__checkbox(type="checkbox", value="", name="kk")
               span.controls_middle Я представитель турбазы
 
-        button.authorization__sub.btn.btn_green Зарегистрироваться
+        button.authorization__sub.btn.btn_green 
+          span.btn__content Зарегистрироваться
 
       .authorization__helper
-        span.text_middle.authorization__helper-text или войти с помощью
+        span.text_middle.authorization__helper-text.mb-24 или войти с помощью
+
+        ul.social
+          li.social__item
+            button.btn.social__btn
+              VkIcon.icon
+          li.social__item
+            button.btn.social__btn
+              OdnoklassnikiIcon.icon
+          li.social__item
+            button.btn.social__btn
+              GoogleIcon.icon
 
       p.authorization__reg.text_bigger 
         span.authorization__reg-text Еще нет аккаунта?
@@ -80,7 +93,16 @@ section.authorization
 </template>
 
 <script setup>
-import { ProfileIcon, LockIcon, MailIcon, CloseIcon, RefreshIcon } from "@/layout/icon/index";
+import {
+  ProfileIcon,
+  LockIcon,
+  MailIcon,
+  CloseIcon,
+  RefreshIcon,
+  VkIcon,
+  GoogleIcon,
+  OdnoklassnikiIcon,
+} from "@/layout/icon/index";
 const ss = true;
 </script>
 
@@ -146,14 +168,14 @@ const ss = true;
         color: $green;
       }
     }
-
   }
-  
+
   .form__label.error {
-    background-color #FFF2F7
-    border: 2px solid #F72921
+    background-color: #FFF2F7;
+    border: 2px solid #F72921;
+
     svg path {
-      stroke #F72921 !important
+      stroke: #F72921 !important;
     }
   }
 
@@ -187,8 +209,8 @@ const ss = true;
   }
 
   &__text-error {
-    margin-top 9px
-    color #F72921 
+    margin-top: 9px;
+    color: #F72921;
   }
 
   &__reg {
@@ -202,6 +224,18 @@ const ss = true;
       margin-left: 12px;
       color: $green;
       opacity: 1;
+    }
+  }
+  
+  .social {
+    &__item {
+      margin-left 16px
+    }
+        
+    &__btn {
+      padding 12px
+      background-color $gray
+      border-radius 12px
     }
   }
 }

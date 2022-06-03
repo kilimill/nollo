@@ -19,7 +19,8 @@
       label.form__label.popular-card__label
         input.form__input.controls_middle(placeholder="Стоимость до")
 
-      button.btn.btn_green Подписаться
+      button.btn.btn_green 
+        span.btn__content Подписаться
 
     Catalog
 </template>

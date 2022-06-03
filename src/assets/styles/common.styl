@@ -6,7 +6,8 @@ body
 	font-size vw(14)
 	line-height vw(14)
 	color #222222
-	background-color #FFFFFF
+	// background-color #000
+	background-color $gray
 
 #app
 	min-height 100%
@@ -57,6 +58,9 @@ body
 
 	&-40
 		margin-bottom vw(40)
+
+	&-48
+		margin-bottom vw(48)
 
 .ml
 	&-8 
@@ -129,10 +133,9 @@ body
 			margin-left 0
 
 .logo
-	&__img
-		width vw(88)
-		height vw(56)
-		object-fit cover
+	width 88px
+	height 56px
+	object-fit cover
 
 .wrapper
 	display flex
@@ -171,11 +174,9 @@ body
 	height vw(24)
 
 	path,
-	rect
-		stroke $black
-
+	rect,
 	circle
-		fill $black
+		stroke $black
 
 	&_green
 		path,
@@ -229,4 +230,128 @@ body
 	border-radius: vw(8);
 	padding: vw(8) vw(16);
 	background-color: #fff;
-	display: flex;
+	display: flex;	
+
+
+.social 
+	&__item 
+		display: inline-block;
+		margin-left: 12px;
+
+		&:first-child 
+			margin-left: 0;
+
+	&__btn 
+		display: block;
+		padding 5px
+		line-height 0
+
+	.icon 
+		width: 16px;
+		height: 16px;
+
+.calendar 
+	width 100%
+
+body
+	.dp
+		&__theme_light 
+			--dp-background-color: #FFFFFF;
+			--dp-text-color: #212121;
+			--dp-hover-icon-color: #BFFDE3 ;
+			--dp-hover-color: #E6FEF4;
+			--dp-hover-text-color: #049A5B;
+			--dp-hover-icon-color: #BFFDE3;
+			--dp-primary-color: $green;
+
+		&__today
+			border none
+
+		&__input
+			height 64px
+			background-color #F5F5F5
+			border none
+			border-radius 16px
+			padding-left 72px
+
+			&:placeholder
+				color #222222 !important
+
+			&_icon
+				margin-left 24px
+
+		&__calendar
+			&_header
+				justify-content space-between
+				position relative
+				color $green
+				text-transform capitalize
+				opacity 0.5
+
+				&_item
+					display flex
+					align-items center
+					justify-content center
+
+				&_separator
+					display none
+
+			&_item,
+			&_header
+				font-size 12px
+				line-height 12px
+				font-weight 500
+
+			&_next
+				margin-left 0
+
+			&_wrap
+				ff $inter
+
+		&__menu
+			border-radius 16px
+			border none
+			padding 24px 24px 32px 24px
+			box-shadow: 0px 15px 39px -31px rgba(0, 0, 0, 0.11);
+
+		&__range_between
+			background-color #E6FEF4
+
+		&__range
+			&_start,
+			&_end
+				border-radius 8px
+		
+		&__flex_display
+			.dp__instance_calendar
+				.dp__month_year_col_nav
+					display inline-block
+					top 50%
+					transform translateY(-50%)
+					position absolute
+					right 0
+
+				&:first-child
+					margin-right 30px
+
+					.dp__month_year_col_nav
+						right auto
+						left 0
+
+		&__month_year
+			&_select
+				font-weight 500
+				font-size 16px
+				line-height 20px
+				margin-right 5px
+				width auto
+				text-transform capitalize
+
+			&_row
+				position relative
+				display flex
+				justify-content center
+				margin-bottom 24px
+
+		&__cell_inner
+			padding 10px

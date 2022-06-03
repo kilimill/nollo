@@ -8,7 +8,8 @@
         label.form__label
           MailIcon.form__label-icon
           input.form__input.controls_middle(placeholder="E-mail")
-        button.form__btn.controls_middle Подписаться
+        button.btn.btn_green
+          span.btn__content Подписаться
 
   img.banner__img(src="@/assets/img/details/mail-box.png")
  

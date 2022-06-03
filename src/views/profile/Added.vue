@@ -4,7 +4,8 @@ section.added
     img.added__img(src="@/assets/img/details/added.jpg") 
     h2.title_up-middle.added__title Объект добавлен
     p.text_middle.opacity-50.mb-32 Перед публикацией модератор проверит все данные. Вы можете отслеживать статус в своём профиле.
-    button.btn.btn_green Понятно
+    button.btn.btn_green 
+      span.btn__content Понятно
 </template>
 
 <style scoped lang='stylus'>

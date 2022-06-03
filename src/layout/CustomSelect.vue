@@ -85,7 +85,7 @@ export default {
 .select {
   position: relative;
   width: 100%;
-  height: 100%;
+  height 64px
   margin: 0 auto;
   border-radius: 16px;
   background-color #F5F5F5
@@ -160,6 +160,7 @@ export default {
 
 .select__content {
   position: absolute;
+  overflow: hidden
   top: 85%;
   left: 0;
   right 0

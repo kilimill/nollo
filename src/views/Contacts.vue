@@ -17,7 +17,8 @@ section.contacts
         ScrollableDecorator.mb-32(ref="scroll")
           .form__description-text(contenteditable="true")
       
-      button.btn.btn_green Отправить
+      button.btn.btn_green 
+        span.btn__content Отправить
 
 </template>
 <script setup>

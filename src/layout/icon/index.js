@@ -1,5 +1,5 @@
 export { default as MailIcon } from './MailIcon.vue'
-export { default as CalendarIcon } from './CalendarIcon.vue'
+// export { default as CalendarIcon } from './CalendarIcon.vue'
 export { default as ArrowNextIcon } from './ArrowNextIcon.vue'
 export { default as ArrowPrevIcon } from './ArrowPrevIcon.vue'
 export { default as CardIcon } from './CardIcon.vue'
@@ -18,7 +18,30 @@ export { default as StarIcon } from './StarIcon.vue'
 export { default as LockIcon } from './LockIcon.vue'
 export { default as CloseIcon } from './CloseIcon.vue'
 export { default as RefreshIcon } from './RefreshIcon.vue'
+export { default as GetOutIcon } from './GetOutIcon.vue'
+export { default as DecrementIcon } from './DecrementIcon.vue'
+export { default as IncrementIcon } from './IncrementIcon.vue'
+export { default as LoaderIcon } from './LoaderIcon.vue'
 
+
+// caledar icons
+export { default as CalendarIcon } from './data-picker/CalendarIcon.vue'
+export { default as ArrowLeftCalendar } from './data-picker/ArrowLeftCalendar.vue'
+export { default as ArrowRightCalendar } from './data-picker/ArrowRightCalendar.vue'
+export { default as DoubleArrowLCalendar } from './data-picker/DoubleArrowLCalendar.vue'
+export { default as DoubleArrowRCalendar } from './data-picker/DoubleArrowRCalendar.vue'
+
+
+// social icons
+export { default as OdnoklassnikiIcon } from './social/OdnoklassnikiIcon.vue'
+export { default as VkIcon } from './social/VkIcon.vue'
+export { default as GoogleIcon } from './social/GoogleIcon.vue'
+
+// filters icons
 export { default as Active } from './filters/Active.vue'
 export { default as PlusIcon } from './PlusIcon.vue'
 export { default as MinusIcon } from './MinusIcon.vue'
+
+
+
+export { default as LogoGreen } from './logos/LogoGreen.vue'

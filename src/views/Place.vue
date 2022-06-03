@@ -1,17 +1,17 @@
 <template lang="pug">
 section.place
   .container
-    .place__wrapper
+    .wrapper.wrapper_h-btw
       section.place__content
         h1.title_bigger.mb-32 Коттедж «Ультрасовременный домик»
 
-        .place__controls
-          button.place__controls-btn
-            HeartIcon.place__controls-ico.mr-16
+        .wrapper.mb-24
+          button.btn.btn_control
+            HeartIcon.icon
             span.controls_middle Добавить в избранное
 
-          button.place__controls-btn
-            ShareIcon.place__controls-ico.mr-16
+          button.btn.btn_control.loading
+            ShareIcon.icon
             span.controls_middle Поделиться
 
         Slider.mb-40(:images="images")
@@ -22,7 +22,7 @@ section.place
 
         form.form.place__form.mb-40
           h3.title_middle.mb-24 Доступные номера
-          .wrapper.wrapper_h-btw.place__form-inner
+          .form__grid.form__grid_2.place__form-inner
             label.form__label
               CalendarIcon.form__label-icon
               input.form__input.controls_middle(placeholder="E-mail")
@@ -30,22 +30,26 @@ section.place
               CalendarIcon.form__label-icon
               input.form__input.controls_middle(placeholder="E-mail")
 
-          .wrapper.wrapper_h-btw
+          .form__grid.form__grid_2
             .form__label.wrapper.wrapper_h-btw
               p.controls_middle Взрослые
 
               .form__controls
-                button.form__controls-btn.form__controls-btn--minus 
+                button.form__controls-btn.form__controls-btn--minus(disabled)
+                  DecrementIcon.icon
                 p.form__controls-numb {{ adults }}
                 button.form__controls-btn.form__controls-btn--plus 
+                  IncrementIcon.icon
 
             .form__label.wrapper.wrapper_h-btw
               p.controls_middle Дети
 
               .form__controls
-                button.form__controls-btn.form__controls-btn--minus 
+                button.form__controls-btn.form__controls-btn--minu
+                  DecrementIcon.icon
                 p.form__controls-numb {{ children }}
                 button.form__controls-btn.form__controls-btn--plus 
+                  IncrementIcon.icon
 
         .place__booking
           img.place__booking-img(:src="images[0]")
@@ -82,7 +86,7 @@ section.place
               CardIcon.icon.mr-16
               span.place__services-text 1 км до моря
 
-        Accordion
+        Accordion.mb-48
 
         .place__contacts
           h3.title_middle.mb-24 Контакты
@@ -116,6 +120,8 @@ import {
   FoodIcon,
   ProfileIcon,
   CardIcon,
+  DecrementIcon,
+  IncrementIcon
 } from "@/layout/icon/index.js";
 import { reactive, ref } from "vue";
 const adults = ref(0);
@@ -163,3 +169,57 @@ const places = reactive([
 ]);
 </script>
 
+<style scoped lang='stylus'>
+@import '@/assets/styles/vars.styl'
+@import '@/assets/styles/mixins.styl'
+
+.place
+  padding-bottom vw(107)
+
+  &__content
+    width vw(864)
+    border-radius vw(16)
+    padding var(--offset-up-mid)
+    background-color #fff
+
+  .btn_control
+    &:first-child
+      margin-right var(--offset-mid) 
+
+  &__form
+    &-inner
+      margin-bottom var(--offset-mid)
+
+  &__booking
+    display flex
+    height vw(196)
+    margin-bottom vw(53)
+    background-color $gray
+    border-radius var(--radius)
+
+    &-img
+      width vw(224)
+      border-radius var(--radius)
+
+    &-box
+      display flex
+      flex-direction column
+      justify-content space-between
+      padding var(--offset-mid) var(--offset-up-mid)
+
+    .btn
+      line-height vw(48)
+
+  &__service
+    &-inner
+      flex-wrap wrap
+      
+    &-item
+      margin-left var(--offset-mid)
+
+      &:first-child
+        margin-left 0
+
+  &__conditions
+    margin-bottom vw(48)
+</style>
