@@ -2,7 +2,7 @@
   <div class="scrollable-decoration" :class="{scrolling}">
     <div class="scrollable-container" ref="container"
          @wheel.passive="wheel($event.deltaY)"
-         @scroll.prevent.stop="wheel(0)" @mouseover="sefs" @mouseleave="wadawd">
+         @scroll.prevent.stop="wheel(0)" >
       <div class="scrollable-content" ref="content">
         <slot></slot>
       </div>
@@ -46,8 +46,6 @@ export default {
   }),
   computed: {
     scrolling() {
-      // console.log(this.contentSize)
-      // console.log(this.containSize)
       return this.contentSize > this.containSize
     },
   },
@@ -79,16 +77,16 @@ export default {
   },
 
   methods: {
-    sefs() {
-      // this.$refs.container.style.overflow
-      // document.body.style.overflowY = 'hidden'
-      console.log(document.body.style.overflow)
-    },
-    wadawd() {
-      // this.$refs.container.style.overflow
-      // document.body.style.overflowY = 'auto'
-      console.log(document.body.style.overflow)
-    },
+    // sefs() {
+    //   // this.$refs.container.style.overflow
+    //   // document.body.style.overflowY = 'hidden'
+    //   console.log(document.body.style.overflow)
+    // },
+    // wadawd() {
+    //   // this.$refs.container.style.overflow
+    //   // document.body.style.overflowY = 'auto'
+    //   console.log(document.body.style.overflow)
+    // },
     /**
      * @param {Number} delta
      **/

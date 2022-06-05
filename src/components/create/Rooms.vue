@@ -14,7 +14,8 @@ section.rooms
 
       .form__grid.form__grid_2.mb-32
         label.form__label
-          input.form__input(placeholder="Контакт")
+          input.form__input(type="text", required)
+          span.form__placeholder Наименование
         
         select.form__text
           option adwdawd
@@ -28,7 +29,8 @@ section.rooms
           option adwdawd
 
         label.form__label.form__grid-item--small
-          input.form__input(placeholder="Контакт")
+          input.form__input(type="text", required)
+          span.form__placeholder Стоимость
         
         select.form__text.form__grid-item--def
           option adwdawd

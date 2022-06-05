@@ -5,27 +5,30 @@ section.create__data
 
   .form__grid.form__grid_2.mb-32
     label.form__label
-      input.form__input(placeholder="Наименование")
+      input.form__input(type="text", required)
+      span.form__placeholder Наименование
 
     CustomSelect
 
-  
   .form__description
-    ScrollableDecorator(ref="scroll"
+    ScrollableDecorator(
+      ref="scroll",
       container="dataTermsContainer",
       content="dataWayContent",
-      scrollbar="dataWayScroll")
+      scrollbar="dataWayScroll"
+    )
       .form__description-text(contenteditable="true")
-
 </template>
 
 <script setup>
-import ScrollableDecorator from '@/layout/ScrollableDecorator.vue'
-import CustomSelect from '@/layout/CustomSelect.vue'
+import ScrollableDecorator from "@/layout/ScrollableDecorator.vue";
+import CustomSelect from "@/layout/CustomSelect.vue";
 </script>
 
 <style setup lang='stylus'>
-.create__data
-  .form__description
-    height 200px
+.create__data {
+  .form__description {
+    height: 200px;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template lang="pug">
-.popular-card
+.popular
   .container
     .popular__item.mb-32( style="background-image: url('http://localhost:8080/img/slide.457f1018.jpg')")
       .popular__item-info
@@ -8,16 +8,19 @@
 
     FilterBtns.mb-24
 
-    form.form.wrapper
-      label.form__label.popular-card__label
+    form.form.wrapper.mb-48
+      label.form__label.form__label_with-icon
         SearchIcon.icon.form__label-icon
-        input.form__input.controls_middle(placeholder="Место или наименование турбазы")
+        input.form__input.controls_middle(type="text", required)
+        span.form__placeholder Место или наименование турбазы
 
-      label.form__label.popular-card__label
-        input.form__input.controls_middle(placeholder="Стоимость от")
+      label.form__label
+        input.form__input.controls_middle(type="text", required)
+        span.form__placeholder Стоимость от
 
-      label.form__label.popular-card__label
-        input.form__input.controls_middle(placeholder="Стоимость до")
+      label.form__label
+        input.form__input.controls_middle(type="text", required)
+        span.form__placeholder Стоимость до
 
       button.btn.btn_green 
         span.btn__content Подписаться
@@ -32,8 +35,8 @@ import Catalog from "@/components/Catalog"
 </script>
 
 <style lang="stylus" scoped>
-.popular-card
-  &__label
+.popular
+  .form__label
     max-width: 192px
     margin-right 32px
 

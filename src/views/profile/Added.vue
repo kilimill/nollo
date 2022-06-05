@@ -1,8 +1,8 @@
 <template lang="pug">
 section.added
   .added__inner
-    img.added__img(src="@/assets/img/details/added.jpg") 
-    h2.title_up-middle.added__title Объект добавлен
+    img.added__img.mb-16(src="@/assets/img/details/added.jpg") 
+    h2.title_up-middle.added__title.mb-16 Объект добавлен
     p.text_middle.opacity-50.mb-32 Перед публикацией модератор проверит все данные. Вы можете отслеживать статус в своём профиле.
     button.btn.btn_green 
       span.btn__content Понятно
@@ -24,11 +24,6 @@ section.added
     height: 256px;
     object-fit: cover;
     object-position: center;
-    margin-bottom 16px
-  }
-
-  &__title {
-    margin-bottom: 16px;
   }
 
   .btn {

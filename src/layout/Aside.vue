@@ -31,7 +31,7 @@ import { ProfileIcon } from "@/layout/icon/index";
   &__list {
     &-item {
       position: relative;
-      border-radius: 16px;
+      border-radius: var(--radius-def)
       padding: 16px 16px 16px 24px;
       margin-top: 12px;
       overflow: hidden;

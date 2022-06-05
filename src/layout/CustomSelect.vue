@@ -82,12 +82,14 @@ export default {
 
 <style scoped lang='stylus'>
 @import '@/assets/styles/vars.styl'
+@import '@/assets/styles/mixins.styl'
+
 .select {
   position: relative;
   width: 100%;
-  height 64px
+  height var(--heigth-elems)
   margin: 0 auto;
-  border-radius: 16px;
+  border-radius: var(--radius-def)
   background-color #F5F5F5
 
   &[data-state='active'] {
@@ -117,7 +119,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 22px 24px;
+  padding: 22px 27px;
   cursor: pointer;
 
   &::before, &::after {
@@ -127,7 +129,7 @@ export default {
     right: 16px;
     display: block;
     width: 10px;
-    height: 2px;
+    height: 3px;
     transition: all 0.3s ease-out;
     background-color: $black;
     transform: translate(-3px, -50%) rotate(45deg);
@@ -169,8 +171,8 @@ export default {
   width: 100%;
   background-color: #F5F5F5;
   border-top: none;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: var(--radius-def);
+  border-bottom-right-radius: var(--radius-def);
   transition: all 0.3s ease-out;
   opacity: 0;
   z-index: 8;
@@ -195,7 +197,7 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 64px;
+  height: var(--heigth-elems)
   max-height: 0;
   padding: 0 24px;
   transition: background-color 0.2s ease-out;

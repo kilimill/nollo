@@ -23,12 +23,14 @@ section.place
         form.form.place__form.mb-40
           h3.title_middle.mb-24 Доступные номера
           .form__grid.form__grid_2.place__form-inner
-            label.form__label
+            label.form__label.form__label_with-icon
               CalendarIcon.form__label-icon
               input.form__input.controls_middle(placeholder="E-mail")
-            label.form__label
+              span.form__placeholder Телефон или e-mail
+            label.form__label.form__label_with-icon
               CalendarIcon.form__label-icon
               input.form__input.controls_middle(placeholder="E-mail")
+              span.form__placeholder Телефон или e-mail
 
           .form__grid.form__grid_2
             .form__label.wrapper.wrapper_h-btw
@@ -72,7 +74,7 @@ section.place
 
               span.title_pre-middle от 6 500 ₽/сутки
 
-        .place__service
+        .place__service.mb-48
           h3.title_middle.mb-24 Услуги
 
           .wrapper.place__service
@@ -92,11 +94,15 @@ section.place
           h3.title_middle.mb-24 Контакты
 
           .wrapper
-            .place__contacts__item
-              a.controls_middle(href="tel:89998887766") +7 (999) 888 77 66
+            .place__contacts-item.mr-32
+              a.controls_middle(href="tel:89998887766") 
+                PhoneIcon
+                span +7 (999) 888 77 66
 
-            .place__contacts__item
-              a.controls_middle(href="mailto:info@kaskaransi.ru") info@kaskaransi.ru
+            .place__contacts-item
+              a.controls_middle(href="mailto:info@kaskaransi.ru") 
+                MailIcon
+                span info@kaskaransi.ru
 
       aside.place__aside
         h4.title_up-middle.mb-32 Вам может понравиться
@@ -109,6 +115,7 @@ section.place
 </template>
 
 <script setup>
+import { reactive, ref } from "vue";
 import Slider from "@/layout/Slider";
 import Accordion from "@/layout/Accordion";
 import CardPlace from "@/layout/CardPlace";
@@ -121,9 +128,10 @@ import {
   ProfileIcon,
   CardIcon,
   DecrementIcon,
-  IncrementIcon
+  IncrementIcon,
+  MailIcon,
+  PhoneIcon
 } from "@/layout/icon/index.js";
-import { reactive, ref } from "vue";
 const adults = ref(0);
 const children = ref(0);
 const images = reactive([
@@ -174,11 +182,12 @@ const places = reactive([
 @import '@/assets/styles/mixins.styl'
 
 .place
-  padding-bottom vw(107)
+  padding-bottom 107px
 
   &__content
-    width vw(864)
-    border-radius vw(16)
+    max-width 864px
+    width 100%
+    border-radius var(--radius-def)
     padding var(--offset-up-mid)
     background-color #fff
 
@@ -192,14 +201,15 @@ const places = reactive([
 
   &__booking
     display flex
-    height vw(196)
-    margin-bottom vw(53)
+    min-height 196px
+    margin-bottom 53px
     background-color $gray
-    border-radius var(--radius)
+    border-radius var(--radius-def)
 
     &-img
-      width vw(224)
-      border-radius var(--radius)
+      max-width 224px
+      width 100%
+      border-radius var(--radius-def)
 
     &-box
       display flex
@@ -208,7 +218,16 @@ const places = reactive([
       padding var(--offset-mid) var(--offset-up-mid)
 
     .btn
-      line-height vw(48)
+      line-height 48px
+
+  &__contacts
+    &-item
+      svg 
+        vertical-align: middle;
+        width 16px
+        h 16px
+        margin-right 12px
+        stroke: $green
 
   &__service
     &-inner
@@ -221,5 +240,5 @@ const places = reactive([
         margin-left 0
 
   &__conditions
-    margin-bottom vw(48)
+    margin-bottom 48px
 </style>

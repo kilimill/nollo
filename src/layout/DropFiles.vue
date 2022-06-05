@@ -170,7 +170,7 @@ export default {
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    border-radius: 8px;
+    border-radius: var(--radius-8)
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,16 +184,16 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     // grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: vw(32);
-    grid-row-gap: vw(32);
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
     margin-bottom: 32px;
   }
 
   &__item {
     position: relative;
     text-align: center;
-    height: vw(120);
-    border-radius: 8px;
+    height: 120px;
+    border-radius: var(--radius-8)
     overflow: hidden;
     color: white;
   }
@@ -210,7 +210,7 @@ export default {
   position: relative;
   padding: 24px;
   border: 1px dashed $green;
-  border-radius: var(--radius);
+  border-radius: var(--radius-def)
 
   .controls_middle {
     margin-bottom: 12px;

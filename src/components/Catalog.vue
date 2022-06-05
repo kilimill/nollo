@@ -1,9 +1,9 @@
 <template lang="pug">
 .catalog
-  .wrapper.wrapper_h-btw.wrapper_v-ctr
-    h3.title_up-middle.mb-40 Популярные базы отдыха
+  .wrapper.wrapper_h-btw.mb-40 
+    h3.title_up-middle Популярные базы отдыха
 
-    .catalog__filter.wrapper.wrapper_v-ctr
+    .catalog__filter.wrapper
       p.controls_middle.opacity-50 Сортировать
 
       .catalog__sort.drop-down__parent(ref="dropDown")
@@ -19,6 +19,8 @@
               span.drop-down__text Выйти
 
       p.controls_middle.opacity-50 Всего 220 092 объекта
+
+      
 
   .catalog__inner
     CardPlace(v-for="(place, i) in places", :key="i", :place="place")
@@ -85,12 +87,16 @@ const places = reactive([
     display flex
     justify-content space-between
     align-items center
+
+  &__filter
+    align-items: flex-end;
+    margin-bottom 4px
     
   &__inner
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 32px;
-    margin-bottom vw(-32)
+    margin-bottom -32px
 
   &__sort
     &-btn

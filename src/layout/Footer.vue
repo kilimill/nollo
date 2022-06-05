@@ -70,6 +70,8 @@ const footerNav = reactive([
 @import '@/assets/styles/vars.styl';
 
 .footer {
+  position relative
+  z-index 10
   margin-top: 80px;
 
   &__inner {

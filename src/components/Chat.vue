@@ -29,9 +29,9 @@ section.chat
         p.text_middle 
           span Гость получил уведомление об отмене бронирования.
       
-      //- .chat__hint-btns.wrapper.wrapper_h-btw
-      //-   button.btn.btn_white Отклонить
-      //-   button.btn Принять
+      .chat__hint-btns.wrapper.wrapper_h-btw
+        button.btn.btn_white Отклонить
+        button.btn.btn_green Принять
 
     .chat__message.chat__message--left
       .chat__message-info.readed
@@ -50,8 +50,14 @@ section.chat
 
 
   form.form.chat__form
-    label.form__label
-      input.form__input(placeholder="Вы сможете отправлять сообщения после принятия запроса")
+    //- p.text_middle Вы сможете отправлять сообщения после принятия запроса
+    
+    
+    .wrapper.wrapper_h-btw
+      label.form__label
+        input.form__input(placeholder="Введите сообщение" required)
+
+      button.btn.btn_green Отправить
 
 </template>
 
@@ -62,9 +68,10 @@ import {MenuIcon} from '@/layout/icon/index'
 <style scoped lang='stylus'>
 .chat
   max-height: 926px
-  border-radius: 16px
+  border-radius: var(--radius-def)
   object-fit: cover
   object-position center
+  overflow: hidden
   background-color #FFFFFF
 
   &__message
@@ -79,7 +86,7 @@ import {MenuIcon} from '@/layout/icon/index'
       justify-content flex-end
 
       .chat__message-item
-        border-radius: 12px 12px 0px 12px;
+        border-radius: var(--radius-12) var(--radius-12) 0px var(--radius-12);
       
       .chat__message-info
         margin-right 8px
@@ -92,7 +99,7 @@ import {MenuIcon} from '@/layout/icon/index'
       justify-content flex-start
 
       .chat__message-item
-        border-radius: 12px 12px 12px 0px;
+        border-radius: var(--radius-12) var(--radius-12) var(--radius-12) 0px;
 
       .chat__message-info
         margin-left 8px
@@ -151,7 +158,7 @@ import {MenuIcon} from '@/layout/icon/index'
 
   &__alert
     padding 24px
-    border-radius: 8px
+    border-radius: var(--radius-8)
     margin-top 12px
 
     &:first-child
@@ -164,11 +171,17 @@ import {MenuIcon} from '@/layout/icon/index'
       background-color #F0FFF4
 
   &__form
+    padding 24px
+    background-color #FFFFFF
     border-top 2px solid #F5F5F5
 
     .form__label
-      background-color #FFFFFF
+      margin-right 32px
+      width 100%
 
-    .form__input::placeholder
+    .form__input
+      margin-top 0
+
+    .text_middle
       color #C8C8C8
 </style>

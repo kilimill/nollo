@@ -46,7 +46,7 @@ import NotFound from "@/components/NotFound.vue";
   &__item
     display flex
     height 240px
-    border-radius: 16px
+    border-radius: var(--radius-def)
     margin-top 32px
     overflow: hidden
     background-color #fff
@@ -69,7 +69,7 @@ import NotFound from "@/components/NotFound.vue";
   &__img
     width 240px
     height 100%
-    border-radius: 16px
+    border-radius: var(--radius-def)
     flex-shrink 0
 
   &__avatar

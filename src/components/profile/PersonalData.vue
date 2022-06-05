@@ -16,22 +16,27 @@ section.personal
 
         .personal__contacts
           label.form__label.mb-24
-            input.form__input(placeholder="Имя") 
+            input.form__input(type="text", required)
+            span.form__placeholder Имя
             
           label.form__label
-            input.form__input(placeholder="Телефон") 
+            input.form__input(type="text", required)
+            span.form__placeholder Телефон
 
     .personal__item
       h2.title_middle.mb-32 Сменить пароль
 
       label.form__label.mb-24
-        input.form__input(placeholder="Старый пароль") 
+        input.form__input(type="password", required)
+        span.form__placeholder Старый пароль
 
       label.form__label.mb-24
-        input.form__input(placeholder="Новый пароль") 
+        input.form__input(type="password", required)
+        span.form__placeholder Новый пароль
 
       label.form__label
-        input.form__input(placeholder="Новый пароль ещё раз") 
+        input.form__input(type="password", required)
+        span.form__placeholder Новый пароль ещё раз
 
     button.btn.btn_green 
       span.btn__content Сохранить изменения  
@@ -47,18 +52,18 @@ section.personal
 
   &__item
     padding 40px
-    background-color #fff
-    border-radius var(--radius)
+    background-color #FFFFFF
+    border-radius var(--radius-def)
     margin-bottom var(--offset-up-mid)
 
   &__file
+    position relative
     display flex
     align-items center
     justify-content center
     flex-direction: column
     width 100%
     height 100%
-    position relative
     background-color $gray
     cursor pointer
 

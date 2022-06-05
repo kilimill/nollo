@@ -2,12 +2,8 @@
   &__label,
   &__description
     pos relative
-    border-radius vw(16)
+    border-radius var(--radius-def)
     background-color $gray
-
-  &__label
-    height 64px
-    padding vw(20) var(--offset-mid)
   
   &__description
     word-break: break-word;
@@ -17,16 +13,24 @@
       padding 20px 25px
 
   &__label
+    pos relative
     display flex
     align-items center
+    height var(--heigth-elems)
+    padding 12px var(--offset-mid)
 
     &-icon
-      width vw(24)
-      height vw(24)
-      margin-right var(--offset-pre-mid)
+      width 24px
+      height 24px
+      margin-right 19px
+      opacity .7
 
       path
         stroke $black
+
+    &_with-icon 
+      .form__placeholder
+        left 64px
 
     &.error 
       .icon
@@ -45,6 +49,15 @@
         path 
           stroke #A0A3BD
 
+  &__placeholder
+    position absolute
+    left 24px
+    top 50%
+    transform translateY(-50%)
+    font-weight 500
+    font-size 16px
+    line-height 20px
+    opacity .7
 
   &__item
     &--50
@@ -66,11 +79,18 @@
     c $black
     width 100%
     font-weight 500
-    font-size vw(16)
-    line-height vw(20)
+    font-size 16px
+    line-height 20px
+    margin-top auto
 
-    &::placeholder
-      c $black
+    &:focus ~ span,
+    &:valid ~ span
+      font-size: 12px;
+      color: #111;
+      font-size 12px
+      line-height 12px
+      top 12px
+      transform translateY(0)
 
   &__controls
     display flex
@@ -80,8 +100,8 @@
       display flex
       align-items center
       justify-content center
-      width vw(30)
-      height vw(30)
+      width 30px
+      height 30px
       border 2px solid transparent
       border-radius 50%
       background-color #fff
@@ -107,7 +127,7 @@
           fill $green
 
       .icon
-        width vw(10)
+        width 10px
 
         path 
           stroke transparent
@@ -115,21 +135,21 @@
           transition stroke .2s
 
       &--plus .icon
-        height vw(10)
+        height 10px
 
       &--minus .icon
-        height vw(2)
+        height 2px
         
 
     &-numb
-      font-size vw(16)
-      line-height vw(32)
+      font-size 16px
+      line-height 32px
       font-weight 700
-      margin 0 vw(16)
+      margin 0 16px
 
   &__grid
     display: grid;
-    grid-column-gap: vw(32);
+    grid-column-gap: 32px;
 
     &_2
       grid-template-columns: repeat(2, 1fr);

@@ -6,31 +6,34 @@ section.waters
   ul.waters__list
     li.wrapper.wrapper_h-btw.mb-32
       label.form__label
-        input.form__input(placeholder="Контакт")
-      
-      select.form__select.form__text
-        option adwdawd
-        option adwdawd
-        option adwdawd
+        input.form__input(type="text", required)
+        span.form__placeholder Река, море или озеро
+
+      label.form__label
+        input.form__input(type="text", required)
+        span.form__placeholder Удаленность от берега, м
 
   button.btn.btn_control
     PlusIcon.icon
     span Добавить еще водоем
-
 </template>
 
 <script setup>
-import { PlusIcon } from '@/layout/icon/index'
+import { PlusIcon } from "@/layout/icon/index";
 </script>
 
 <style scoped lang='stylus'>
-.waters
-  .form
-    &__label
-      max-width 528px
-      width 100%
+.waters {
+  .form {
+    &__label {
+      max-width: 528px;
+      width: 100%;
+    }
 
-    &__select
-      max-width 304px
-      width 100%
+    &__select {
+      max-width: 304px;
+      width: 100%;
+    }
+  }
+}
 </style>

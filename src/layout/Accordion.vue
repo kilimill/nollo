@@ -1,7 +1,5 @@
 <template lang="pug">
 .accordion 
-  //- h4.title_middle.mb-32 Условия проживания
-
   .accordion__item(v-for="(condition, i) in conditions", :key="i" @click="accordionToggle($event)")
     .accordion__item-inner
       .accordion__top.wrapper.wrapper_h-btw

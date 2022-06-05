@@ -7,16 +7,17 @@
 
     .index__search
       form.form.index__form
-        label.form__label.index__form-place
+        label.form__label.index__form-place.form__label_with-icon
           SearchIcon.icon.form__label-icon
-          input.form__input(placeholder="Пароль")
+          input.form__input(type="text", required)
+          span.form__placeholder Место или наименование турбазы
 
         DataPicker
 
         CustomSelect
 
-        button.btn.btn_green Найти
-
+        //- button.btn.btn_green Найти
+        button.btn.btn_green(@click.prevent="sesf") Найти
 
     section.performance
       .performance__item
@@ -42,56 +43,63 @@
         #vk_groups
 </template>
 
-<script>
+<script setup>
 import Catalog from "@/components/Catalog";
 import BannerSub from "@/layout/BannerSub";
 import DataPicker from "@/layout/DataPicker";
 import CustomSelect from "@/layout/CustomSelect";
-export default {
-  name: "HomePage",
-  component: {
-    Catalog,
-    BannerSub,
-  },
+import { SearchIcon } from "@/layout/icon/index";
+import { useRouter } from "vue-router";
+// script setup logic
+const router = useRouter();
+const sesf = () => {
+  router.push("/found");
 };
 </script>
 
-<script setup>
-import {SearchIcon} from '@/layout/icon/index'
-// script setup logic
-</script>
-
 <style lang="stylus">
-@import '@/assets/styles/mixins.styl'
-.index
-  &__head
-    width vw(600)
-    text-align: center
-    margin 48px auto 
+@import '@/assets/styles/mixins.styl';
 
-  &__search
-    margin 48px 0 80px
+.index {
+  &__head {
+    max-width: 600px;
+    text-align: center;
+    margin: 48px auto;
+  }
 
-  &__form
-    width vw(1152)
-    margin 0 auto
-    display flex
-    justify-content space-between
-    background-color #fff
-    padding 24px 32px
+  &__search {
+    margin: 48px 0 80px;
+  }
+
+  &__form {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 24px 32px;
     border-radius: 24px;
     box-shadow: 0px 15px 39px -31px rgba(0, 0, 0, 0.11);
 
-    &-place
-      width: vw(390)
+    &-place {
+      max-width: 390px
+      width 100%
+    }
 
-    .calendar 
-      width vw(266)
+    .calendar {
+      max-width: 266px
+      width 100%
+    }
 
-    .select 
-      width: vw(192)
-      margin 0
+    .select {
+      max-width: 192px
+      width 100%
+      margin: 0;
+    }
+  }
 
-  .performance
-    margin-bottom 80px
+  .performance {
+    margin-bottom: 80px;
+  }
+}
 </style>

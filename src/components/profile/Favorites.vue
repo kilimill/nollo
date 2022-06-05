@@ -1,7 +1,6 @@
 <template lang="pug">
 section.favorites
   //- NotFound(pageInfo="favorites")
-
   Catalog
 </template>
 

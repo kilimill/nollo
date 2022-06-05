@@ -51,7 +51,7 @@ section.reservation
 
         .wrapper.wrapper_h-btw.wrapper.mb-32
           p.text_middle.opacity-70 Скидка 25%
-          p.text_middle 65 000 ₽
+          p.text_middle - 65 000 ₽
 
         .total.wrapper.wrapper_h-btw
           p.text_middle.opacity-70 Итог
@@ -65,10 +65,12 @@ section.reservation
 
 <script setup>
 import { FoodIcon, ProfileIcon } from "@/layout/icon/index.js";
-import Chat from "@/components/Chat"
+import Chat from "@/components/Chat.vue"
 </script>
 
 <style lang="stylus" scoped>
+@import '@/assets/styles/vars.styl'
+
 .reservation
   padding-bottom 86px
   
@@ -78,7 +80,7 @@ import Chat from "@/components/Chat"
     width 100%
     margin-right 32px
     padding 32px
-    border-radius 16px
+    border-radius var(--radius-def)
     background-color #FFFFFF
 
     &-header
@@ -92,7 +94,7 @@ import Chat from "@/components/Chat"
   &__img
     width 100%
     height 282px
-    border-radius: 8px
+    border-radius: var(--radius-8)
     object-fit cover
     object-position: center
 

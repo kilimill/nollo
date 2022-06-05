@@ -1,11 +1,11 @@
 .btn
   pos relative
   cursor pointer
-  padding 0 vw(34)
-  font-size vw(16)
-  line-height 64px
+  padding 0 34px
+  font-size 16px
+  line-height var(--heigth-elems)
   font-weight 500
-  border-radius var(--radius)
+  border-radius var(--radius-def)
   transition background-color .3s, color .3s
 
   &[disabled]
@@ -17,7 +17,7 @@
   &_control
     display flex
     align-items center
-    padding vw(14) vw(20)
+    padding 14px 20px
     color $green
     background-color transparent
 
@@ -34,8 +34,8 @@
       display none
 
     .icon
-      width vw(16)
-      height vw(16)
+      width 16px
+      height 16px
       margin-right 16px
 
       circle,

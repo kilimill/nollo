@@ -16,17 +16,21 @@ section.address
 
   .wrapper.wrapper_h-btw.mb-32
     label.form__label
-      input.form__input(placeholder="Город или населенный пункт")
+      input.form__input(type="text", required)
+      span.form__placeholder Город или населенный пункт
 
     label.form__label
-      input.form__input(placeholder="Удаленность от населенного пункта, км")
+      input.form__input(type="text", required)
+      span.form__placeholder Удаленность от населенного пункта, км
 
   .wrapper.wrapper_h-btw
     label.form__label.form__label-street
-      input.form__input(placeholder="Улица")
+      input.form__input(type="text", required)
+      span.form__placeholder Улица
 
     label.form__label
-      input.form__input(placeholder="Дом")
+      input.form__input(type="text", required)
+      span.form__placeholder Дом
 </template>
 
 <style scoped lang='stylus'>

@@ -1,10 +1,12 @@
 <template lang="pug">
 section.booking
   .container-mid
+    h1.title_bigger.mb-32 Бронирование №2397-93
+
     Slider.mb-40(:images="images")
 
     section.booking__section
-      h1.title_up-middle.border-btm.mb-24 Коттедж «Ультрасовременный домик»
+      h2.title_up-middle.border-btm.mb-24 Коттедж «Ультрасовременный домик»
 
       .details.mb-24
         .details__item
@@ -17,38 +19,38 @@ section.booking
 
       .booking__info.wrapper.wrapper_h-btw
         .booking__info-item
-          h2.title_middle.border-btm.mb-16 Детали бронирования
+          h3.title_middle.border-btm.mb-16 Детали бронирования
 
-          .mb-24
-            .wrapper.wrapper_h-btw.border-btm.mb-24
-              .booking__info-col
-                h3.controls_small.mb-8.opacity-30 Заезд
-                p.controls_middle.mb-4 пн, 7 июня 2022
-                p.text_middle с 14:00
+          .wrapper.wrapper_h-btw.border-btm.mb-24
+            .booking__info-col
+              h3.controls_small.mb-8.opacity-30 Заезд
+              p.controls_middle.mb-4 пн, 7 июня 2022
+              p.text_middle с 14:00
 
-              .booking__info-col
-                h3.controls_small.mb-8.opacity-30 Отъезд
-                p.controls_middle.mb-4 вс, 20 июня 2022
-                p.text_middle до 12:00
+            .booking__info-col
+              h3.controls_small.mb-8.opacity-30 Отъезд
+              p.controls_middle.mb-4 вс, 20 июня 2022
+              p.text_middle до 12:00
 
           p.text_middle.mb-4 Общая длительность проживания
           p.controls_middle 13 ночей
 
         .booking__info-item
-          h2.title_middle.border-btm.mb-16 Стоимость
+          h3.title_middle.border-btm.mb-16 Стоимость
 
-          .wrapper.wrapper_h-btw.wrapper.mb-16
+          .wrapper.wrapper_h-btw.mb-16
             p.text_middle.opacity-70 20 000 ₽ х 13 ночей
             p.text_middle 260 000 ₽
 
-          .wrapper.wrapper_h-btw.wrapper
+          .wrapper.wrapper_h-btw
             p.text_middle.opacity-70 Скидка 25%
             p.text_middle 65 000 ₽
 
-          .total.wrapper.wrapper_h-btw
+          .total
             p.text_middle Итог
             p.text_middle.opacity-70 195 000 ₽
 
+      h4.title_middle.mb-32 Условия проживания
       Accordion
 
       button.btn.btn_green.booking__btn 
@@ -79,14 +81,17 @@ const images = reactive([
 @import '@/assets/styles/vars.styl';
 
 .booking {
-  padding-bottom: vw(81);
+  padding-bottom: 81px;
 
   &__info {
-    margin-bottom: vw(64);
+    margin-bottom: 64px;
 
     &-item {
-      width: vw(416);
-      border-radius: var(--radius);
+      max-width: 416px;
+      width 100%
+      display flex
+      flex-direction: column
+      border-radius: var(--radius-def)
       padding: var(--offset-up-mid);
       background-color: $gray;
     }
@@ -94,8 +99,8 @@ const images = reactive([
 
   &__btn {
     width: 100%;
-    margin-top: vw(56);
-    margin-bottom: vw(32);
+    margin-top: 56px;
+    margin-bottom: 32px;
   }
 
   &__link {

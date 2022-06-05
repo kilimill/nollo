@@ -3,11 +3,10 @@ section.found
   .container
     form.found__form
       .wrapper.wrapper_v-ctr.mb-24
-        label.form__label.found__form-place
+        label.form__label.found__form-place.form__label_with-icon
           SearchIcon.form__label-icon
-          input.form__input.controls_middle(
-            placeholder="Место или наименование турбазы"
-          )
+          input.form__input.controls_middle(type="text" required)
+          span.form__placeholder Место или наименование турбазы
 
         DataPicker
 
@@ -24,22 +23,27 @@ section.found
       .wrapper
         .form__grid.form__grid_4
           label.form__label
-            input.form__input.controls_middle(placeholder="Стоимость от")
+            input.form__input.controls_middle(type="text" required)
+            span.form__placeholder Стоимость от
 
           label.form__label
-            input.form__input.controls_middle(placeholder="Стоимость до")
+            input.form__input.controls_middle(type="text" required)
+            span.form__placeholder Стоимость до
 
           CustomSelect
 
           CustomSelect
 
         button.btn.btn_green.found__btn Найти
+      
+    Catalog
 </template>
 
 <script setup>
 import DataPicker from "@/layout/DataPicker";
 import CustomSelect from "@/layout/CustomSelect.vue";
 import FilterBtns from "@/layout/FilterBtns.vue";
+import Catalog from "@/components/Catalog.vue";
 import { SearchIcon } from "@/layout/icon/index";
 </script>
 
@@ -50,13 +54,14 @@ import { SearchIcon } from "@/layout/icon/index";
 .found {
   &__form {
     &-place {
-      width: vw(752);
-      margin-right: vw(32);
+      max-width: 752px
+      width 100%
+      margin-right: 32px
     }
 
     .calendar {
-      width: vw(304);
-      margin-right: vw(32);
+      max-width: 304px
+      margin-right: 32px
     }
 
     .form__checkbox-label span::before {
@@ -65,8 +70,9 @@ import { SearchIcon } from "@/layout/icon/index";
   }
 
   &__btn {
-    width: vw(304);
-    margin-left: vw(32);
+    max-width: 304px;
+    width 100%
+    margin-left: 32px
   }
 }
 </style>

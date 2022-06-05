@@ -11,11 +11,12 @@ section.contacts
         option adwdawd
 
       label.form__label
-        input.form__input(placeholder="Контакт")
+        input.form__input(type="text", required)
+        span.form__placeholder Контакт
 
   button.btn.btn_add
     PlusIcon.icon
-    span  Добавить еще контакт
+    span Добавить еще контакт
 </template>
 
 <script setup>

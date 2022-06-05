@@ -4,23 +4,25 @@ section.authorization
   .authorization__content
     .authorization__wrapper
       header.authorization__header(v-if="ss")
-        h2.title_bigger Добро пожаловать
+        h2.title_bigger.mb-16 Добро пожаловать
         p.text_bigger.opacity-50 Войдите в аккаунт для продолжения работы
 
       header.authorization__header(v-if="!ss")
-        h2.title_bigger Регистрация
+        h2.title_bigger.mb-16 Регистрация
         p.text_bigger.opacity-50 Введите свои данные
 
       form.authorization__form(v-if="ss")
-        label.form__label.mb-24
+        label.form__label.form__label_with-icon.mb-24
           ProfileIcon.icon.form__label-icon
-          input.form__input(placeholder="Телефон или e-mail")
+          input.form__input(type="text" required)
+          span.form__placeholder Телефон или e-mail
           button.form__label-clear
             CloseIcon.icon
 
-        label.form__label.error
+        label.form__label.form__label_with-icon.error
           LockIcon.icon.form__label-icon
-          input.form__input(placeholder="Пароль")
+          input.form__input(type="password" required)
+          span.form__placeholder Пароль
           button.form__label-clear
             CloseIcon.icon
 
@@ -34,27 +36,31 @@ section.authorization
           span.btn__content Войти
 
       form.authorization__form(v-if="!ss")
-        label.form__label.mb-24
+        label.form__label.form__label_with-icon.mb-24
           ProfileIcon.icon.form__label-icon
-          input.form__input(placeholder="Имя и фамилия")
+          input.form__input(type="text" required)
+          span.form__placeholder Имя и фамилия
           button.form__label-clear
             CloseIcon.icon
 
-        label.form__label.mb-24
+        label.form__label.form__label_with-icon.mb-24
           MailIcon.icon.form__label-icon
-          input.form__input(placeholder="Телефон или e-mail")
+          input.form__input(type="text" required)
+          span.form__placeholder Телефон или e-mail
           button.form__label-clear
             CloseIcon.icon
 
-        label.form__label.mb-24
+        label.form__label.form__label_with-icon.mb-24
           LockIcon.icon.form__label-icon
-          input.form__input(placeholder="Пароль")
+          input.form__input(type="password" required)
+          span.form__placeholder Пароль
           button.form__label-clear
             CloseIcon.icon
 
-        label.form__label 
+        label.form__label.form__label_with-icon
           LockIcon.icon.form__label-icon
-          input.form__input(placeholder="Повторите пароль")
+          input.form__input(type="password" required)
+          span.form__placeholder Повторите пароль
           button.form__label-clear
             CloseIcon.icon
 
@@ -113,10 +119,6 @@ const ss = true;
   display: flex;
   width: 100%;
   height: 100%;
-
-  .title_bigger {
-    margin-bottom: 16px;
-  }
 
   &__header {
     margin-bottom: 40px;
@@ -235,7 +237,7 @@ const ss = true;
     &__btn {
       padding 12px
       background-color $gray
-      border-radius 12px
+      border-radius var(--radius-12)
     }
   }
 }

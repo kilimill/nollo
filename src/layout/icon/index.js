@@ -22,6 +22,7 @@ export { default as GetOutIcon } from './GetOutIcon.vue'
 export { default as DecrementIcon } from './DecrementIcon.vue'
 export { default as IncrementIcon } from './IncrementIcon.vue'
 export { default as LoaderIcon } from './LoaderIcon.vue'
+export { default as PhoneIcon } from './PhoneIcon.vue'
 
 
 // caledar icons

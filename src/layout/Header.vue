@@ -14,7 +14,7 @@ header.header
       .header__wrapper
         .header__profile
           .header__profile-default
-            ProfileIcon.icon
+            ProfileIcon.icon.mr-16
             span.controls_middle Профиль
 
           //- .header__wrapper.header__profile-user 
@@ -71,9 +71,10 @@ import {
 
   &__text {
     pos: relative;
-    width: vw(227);
-    padding-left: vw(27);
-    margin-left: vw(24);
+    max-width: 227px;
+    width 100%
+    padding-left: 27px;
+    margin-left: 24px;
 
     &::before {
       content: '';
@@ -81,8 +82,8 @@ import {
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      width: vw(3);
-      height: vw(40);
+      width: 3px;
+      height: 40px;
       background-color: $black;
     }
   }
@@ -90,7 +91,7 @@ import {
   &__location {
     position: relative;
     padding-left: 32px;
-    margin-left: vw(120);
+    margin-left: 120px;
 
     &::before {
       content: '';
@@ -114,7 +115,6 @@ import {
     margin-right: 90px;
 
     &-default .icon {
-      margin-right: 16px;
       width: 16px;
       height: 16px;
     }
