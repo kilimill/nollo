@@ -1,10 +1,10 @@
 <template lang="pug">
-section.waters
-  h2.title_up-middle Близлежащие водоемы
+section.create__waters
+  h2.title_up-middle.mb-12 Близлежащие водоемы
   p.text_middle.opacity-50.mb-24 В случае, если водоемов поблизости нет, можете пропустить этот шаг
 
-  ul.waters__list
-    li.wrapper.wrapper_h-btw.mb-32
+  ul.create__waters-list
+    li.form__grid.form__grid_2.mb-32
       label.form__label
         input.form__input(type="text", required)
         span.form__placeholder Река, море или озеро
@@ -21,19 +21,3 @@ section.waters
 <script setup>
 import { PlusIcon } from "@/layout/icon/index";
 </script>
-
-<style scoped lang='stylus'>
-.waters {
-  .form {
-    &__label {
-      max-width: 528px;
-      width: 100%;
-    }
-
-    &__select {
-      max-width: 304px;
-      width: 100%;
-    }
-  }
-}
-</style>

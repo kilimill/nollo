@@ -5,16 +5,16 @@
       .files__controls
         .files__btn
           button
-            StarIcon.icon
+            StarIcon
         .files__btn
           button(v-on:click="removeFile(key)")
-            TrashIcon.icon
+            TrashIcon
 
       img.files__preview(v-bind:ref="'preview' + parseInt(key)")
 
   .file__drag-drop
     p.controls_middle
-      span.files__text Выберите файл
+      span.files__text Выберите файл 
       span.files__text или перетащите в эту область
 
     p.controls_small PNG, jpg, gif не более 10 MB
@@ -154,7 +154,9 @@ export default {
   }
 
   .files__btn {
-    .icon path {
+    svg {
+      width: 24px;
+      height: 24px;
       stroke: #fff;
     }
   }
@@ -169,11 +171,13 @@ export default {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    border-radius: var(--radius-8)
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: var(--radius-8);
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    transition: opacity 0.3s;
   }
 
   &__btn:first-child {
@@ -183,9 +187,7 @@ export default {
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 32px;
-    grid-row-gap: 32px;
+    grid-gap: 32px;
     margin-bottom: 32px;
   }
 
@@ -193,9 +195,15 @@ export default {
     position: relative;
     text-align: center;
     height: 120px;
-    border-radius: var(--radius-8)
+    border-radius: var(--radius-8);
     overflow: hidden;
     color: white;
+
+    &:hover {
+      .files__controls {
+        opacity: 1;
+      }
+    }
   }
 
   &__preview {
@@ -210,7 +218,7 @@ export default {
   position: relative;
   padding: 24px;
   border: 1px dashed $green;
-  border-radius: var(--radius-def)
+  border-radius: var(--radius-def);
 
   .controls_middle {
     margin-bottom: 12px;

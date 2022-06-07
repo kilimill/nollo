@@ -1,14 +1,11 @@
 <template lang="pug">
-section.contacts
-  h2.title_up-middle Контактные данные
+section.create__contacts
+  h2.title_up-middle.mb-12 Контактные данные
   p.text_middle.opacity-50.mb-24 Оставьте удобные виды связи с гостями
 
-  ul.contacts__list
-    li.contacts__item
-      select.form__text
-        option adwdawd
-        option adwdawd
-        option adwdawd
+  ul.create__contacts-list.mb-24
+    li.form__grid.form__grid_2
+      CustomSelect
 
       label.form__label
         input.form__input(type="text", required)
@@ -21,29 +18,5 @@ section.contacts
 
 <script setup>
 import { PlusIcon } from "@/layout/icon/index";
+import CustomSelect from "@/layout/CustomSelect.vue";
 </script>
-
-<style scoped lang='stylus'>
-.contacts {
-  .form__label, select {
-    width: 48%;
-  }
-
-  .form__label {
-    &-street {
-      max-width: 100%;
-      margin-right: 32px;
-      width: 100%;
-    }
-  }
-
-  &__list {
-    margin-bottom 24px
-  }
-
-  &__item {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-</style>

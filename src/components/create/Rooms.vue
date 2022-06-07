@@ -1,11 +1,11 @@
 <template lang="pug">
 section.rooms
-  h2.title_up-middle Контактные данные
+  h2.title_up-middle.mb-12 Контактные данные
   p.text_middle.opacity-50.mb-24 Оставьте удобные виды связи с гостями
 
   .rooms__content
     .rooms__item
-      .rooms__header.wrapper.wrapper_h-btw.wrapper_v-ctr
+      .wrapper.wrapper_h-btw.wrapper_v-ctr
         h3.title_pre-middle Номер №1
 
         button.btn.btn_control.btn_red
@@ -17,49 +17,42 @@ section.rooms
           input.form__input(type="text", required)
           span.form__placeholder Наименование
         
-        select.form__text
-          option adwdawd
-          option adwdawd
-          option adwdawd
+        CustomSelect
 
       .form__grid.form__grid_4.mb-32
-        select.form__text.form__grid-item--small
-          option adwdawd
-          option adwdawd
-          option adwdawd
+        CustomSelect.form__grid-item--small
 
         label.form__label.form__grid-item--small
           input.form__input(type="text", required)
           span.form__placeholder Стоимость
-        
-        select.form__text.form__grid-item--def
-          option adwdawd
-          option adwdawd
-          option adwdawd
+      
+        CustomSelect.form__grid-item--def
 
-      ScrollableDecorator.mb-32(ref="scroll")
-        .rooms__description.form__text(contenteditable="true")
+      .form__description.mb-32
+        ScrollableDecorator.mb-32(ref="scroll")
+          .form__description-text(contenteditable="true")
 
-      DropFiles
+      DropFiles.mb-32
 
-  button.btn.btn_control.rooms__add
+  button.btn.btn_control
     PlusIcon.icon
-    span  Добавить еще контакт
-
+    span Добавить еще номер
 </template>
 
 <script setup>
 import { PlusIcon, TrashIcon } from "@/layout/icon/index";
 import ScrollableDecorator from '@/layout/ScrollableDecorator.vue'
 import DropFiles from '@/layout/DropFiles.vue'
+import CustomSelect from "@/layout/CustomSelect.vue";
 </script>
 
 <style scoped lang='stylus'>
 .rooms
-  &__description
-    max-width 100%
-    height 112px
+  .form__description {
+    height: 112px;
 
-  &__add
-    margin-top 32px
+    &-text {
+      min-height: 112px;
+    }
+  }
 </style>

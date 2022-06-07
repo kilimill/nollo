@@ -2,36 +2,32 @@
 aside.aside
   nav.aside__nav
     ul.aside__list
-      li.aside__list-item
-        router-link.aside__link.wrapper(to="/place")
-          ProfileIcon.icon
-          p.controls_middle Данные профиля
-      li.aside__list-item
-        router-link.aside__link.wrapper(to="/place")
-          ProfileIcon.icon
-          p.controls_middle Данные профиля
-      li.aside__list-item
-        router-link.aside__link.wrapper(to="/place")
-          ProfileIcon.icon
-          p.controls_middle Данные профиля
+      li.aside__list-item(v-for="(item, i) in asideList", :key="i")
+        a.aside__link.wrapper(@click="$emit('my-event', item.link)")
+          //- ProfileIcon.icon
+          p.controls_middle {{ item.name }}
 </template>
 
 <script setup>
-import { ProfileIcon } from "@/layout/icon/index";
+// import { ProfileIcon } from "@/layout/icon/index";
+import { defineProps } from "vue";
+defineProps({
+  asideList: Array,
+});
 </script>
 
 <style scoped lang="stylus">
-@import "@/assets/styles/vars.styl";
+@import '@/assets/styles/vars.styl';
 
 .aside {
   max-width: 416px;
-  width 100%
-  margin-right var(--offset-up-mid)
-  
+  width: 100%;
+  margin-right: var(--offset-up-mid);
+
   &__list {
     &-item {
       position: relative;
-      border-radius: var(--radius-def)
+      border-radius: var(--radius-def);
       padding: 16px 16px 16px 24px;
       margin-top: 12px;
       overflow: hidden;
@@ -43,7 +39,7 @@ import { ProfileIcon } from "@/layout/icon/index";
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         bottom: 0;

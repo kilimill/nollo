@@ -20,7 +20,7 @@ section.found
 
       FilterBtns.mb-24
 
-      .wrapper
+      .wrapper.mb-40
         .form__grid.form__grid_4
           label.form__label
             input.form__input.controls_middle(type="text" required)

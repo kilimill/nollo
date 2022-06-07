@@ -39,6 +39,7 @@ import Catalog from "@/components/Catalog"
   .form__label
     max-width: 192px
     margin-right 32px
+    background-color #FFFFFF
 
     &:first-child
       max-width: 100%

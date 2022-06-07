@@ -29,6 +29,10 @@ import CustomSelect from "@/layout/CustomSelect.vue";
 .create__data {
   .form__description {
     height: 200px;
+
+    &-text {
+      min-height: 200px
+    }
   }
 }
 </style>

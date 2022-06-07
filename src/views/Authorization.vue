@@ -1,6 +1,6 @@
 <template lang="pug">
 section.authorization
-  .authorization__bg
+  //- .authorization__bg
   .authorization__content
     .authorization__wrapper
       header.authorization__header(v-if="ss")
@@ -124,17 +124,17 @@ const ss = true;
     margin-bottom: 40px;
   }
 
-  &__bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    // bottom: 0
-    width: 624px;
-    min-height: 100vh;
-    height: 100%;
-    background-color: #FFFFFF;
-    border-radius: 0px 32px 32px 0px;
-  }
+  // &__bg {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   // bottom: 0
+  //   width: 624px;
+  //   min-height: 100vh;
+  //   height: 100%;
+  //   background-color: #FFFFFF;
+  //   border-radius: 0px 32px 32px 0px;
+  // }
 
   &__wrapper {
     width: 100%;

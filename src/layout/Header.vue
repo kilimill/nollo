@@ -23,7 +23,7 @@ header.header
 
           ul.drop-down
             li.drop-down__item
-              button.drop-down__btn 
+              button.drop-down__btn(@click.prevent="logIn")
                 ProfileIcon.icon
                 span.drop-down__text Профиль
             li.drop-down__item
@@ -47,6 +47,11 @@ import {
   OdnoklassnikiIcon,
   VkIcon,
 } from "@/layout/icon/index";
+import { useRouter } from "vue-router";
+const router = useRouter()
+const logIn = () => {
+  router.push({ name: "Authorization" });
+};
 </script>
 
 <style scoped lang='stylus'>
@@ -72,7 +77,7 @@ import {
   &__text {
     pos: relative;
     max-width: 227px;
-    width 100%
+    width: 100%;
     padding-left: 27px;
     margin-left: 24px;
 

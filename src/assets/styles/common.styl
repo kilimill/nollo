@@ -8,8 +8,18 @@ body
 	color #222222
 	// background-color #000
 	// background-color #fff
-	background-color #70e3b2
-	// background-color $gray
+	// background-color #70e3b2
+	background-color $gray
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
 #app
 	min-height 100%
@@ -22,7 +32,19 @@ body
 		background url('~@/assets/img/details/bg-log.jpg')
 		background-size contain
 		background-repeat no-repeat
-		background-position right bottom
+		background-position right top
+
+		&::before
+			content ''
+			position: absolute;
+			left: 0;
+			top: 0;
+			// bottom: 0
+			width: 624px;
+			// min-height: 100vh;
+			height: 100%;
+			background-color: #FFFFFF;
+			border-radius: 0px 32px 32px 0px;
 
 
 .opacity 
@@ -96,8 +118,6 @@ body
 	&-40
 		margin-right 40px
 
-// .main 
-// 	&__content
 .container
 	padding 0 64px
 
@@ -105,13 +125,6 @@ body
 		width 894px
 		padding 0 15px
 		margin 0 auto
-
-.info
-	display flex
-
-	&__inner
-		width 752px
-		margin-right var(--offset-up-mid)
 
 .performance
 	display flex
@@ -337,4 +350,4 @@ body
 		&__cell_inner
 			padding 10px
 
-			
+

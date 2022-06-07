@@ -70,7 +70,6 @@ import Chat from "@/components/Chat.vue"
 
 <style lang="stylus" scoped>
 @import '@/assets/styles/vars.styl'
-
 .reservation
   padding-bottom 86px
   

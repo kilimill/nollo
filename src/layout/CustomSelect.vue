@@ -88,7 +88,6 @@ export default {
   position: relative;
   width: 100%;
   height var(--heigth-elems)
-  margin: 0 auto;
   border-radius: var(--radius-def)
   background-color #F5F5F5
 

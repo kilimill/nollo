@@ -1,7 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
-const routes = [
-  {
+// import Vue from 'vue';
+// import Router from 'vue-router';
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
+// Vue.use(Router);
+const routes = [{
     path: '/',
     name: 'Home',
     component: () => import('@/views/Index'),
@@ -53,35 +57,63 @@ const routes = [
     meta: {
       title: 'Profile',
       key: 5
-    }
-  },
-  {
-    path: '/reservation',
-    name: 'Reservation',
-    component: () => import('@/views/profile/Reservation'),
-    meta: {
-      title: 'Reservation',
-      key: 6
-    }
+    },
+    children: [{
+        path: 'reservation',
+        name: 'Reservation',
+        component: () => import('@/views/profile/Reservation'),
+      },
+      {
+        path: 'added',
+        name: 'Added',
+        component: () => import('@/views/profile/Added'),
+      },
+    ]
   },
   {
     path: '/create',
     name: 'Create',
     component: () => import('@/views/profile/Create'),
-    meta: {
-      title: 'Create',
-      key: 7
-    }
   },
   {
-    path: '/added',
-    name: 'Added',
-    component: () => import('@/views/profile/Added'),
-    meta: {
-      title: 'Added',
-      key: 8
-    }
+    path: '/ccc',
+    name: 'ccc',
+    component: () => import('@/components/create/Index'),
   },
+  // {
+    // path: "/:catchAll(.*)",
+    // component: NotFound,
+  // },
+
+
+
+  // {
+  //   path: '/reservation',
+  //   name: 'Reservation',
+  //   component: () => import('@/views/profile/Reservation'),
+  //   meta: {
+  //     title: 'Reservation',
+  //     key: 6
+  //   }
+  // },
+  // {
+  //   path: '/create',
+  //   name: 'Create',
+  //   component: () => import('@/views/profile/Create'),
+  //   meta: {
+  //     title: 'Create',
+  //     key: 7
+  //   }
+  // },
+  // {
+  //   path: '/added',
+  //   name: 'Added',
+  //   component: () => import('@/views/profile/Added'),
+  //   meta: {
+  //     title: 'Added',
+  //     key: 8
+  //   }
+  // },
   {
     path: '/terms',
     name: 'Terms',
@@ -131,7 +163,20 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  base: process.env.BASE_URL,
+  routes,
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  },
+
 })
+
+// router.afterEach((to) => {
+//   Vue.nextTick(() => {
+//     document.title = to.meta.title;
+//   })
+// });
 
 export default router

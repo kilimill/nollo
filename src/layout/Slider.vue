@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, ref, reactive } from "vue";
+import { defineProps, onMounted, onBeforeUnmount, ref, reactive } from "vue";
 import Swiper, { Navigation } from "swiper";
 import { CloseIcon, ResizeIcon } from '@/layout/icon/index'
 import "swiper/css";
@@ -79,8 +79,13 @@ const switchBackground = (id) => {
 
 onMounted(() => {
   window.addEventListener('keydown', closePopupForKey)
-  console.log()
   swaper = new Swiper(document.querySelector(".slider__swiper"), options);
   switchBackground(0);
 });
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', closePopupForKey)
+});
+
+
 </script>

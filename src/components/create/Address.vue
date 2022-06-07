@@ -1,20 +1,14 @@
 <template lang="pug">
-section.address
-  h2.title_up-middle Фотографии
+section.create__address
+  h2.title_up-middle.mb-12 Фотографии
   p.text_middle.opacity-50.mb-24 Создайте галерею фотографий и отметьте одну, которая будет отображаться в карточке
 
-  .wrapper.wrapper_h-btw.mb-32 
-    select.form__text
-      option adwdawd
-      option adwdawd
-      option adwdawd
+  .form__grid.form__grid_2.mb-32 
+    CustomSelect
 
-    select.form__text
-      option adwdawd
-      option adwdawd
-      option adwdawd
+    CustomSelect
 
-  .wrapper.wrapper_h-btw.mb-32
+  .form__grid.form__grid_2.mb-32
     label.form__label
       input.form__input(type="text", required)
       span.form__placeholder Город или населенный пункт
@@ -28,21 +22,25 @@ section.address
       input.form__input(type="text", required)
       span.form__placeholder Улица
 
-    label.form__label
+    label.form__label.form__label-home
       input.form__input(type="text", required)
       span.form__placeholder Дом
 </template>
 
-<style scoped lang='stylus'>
-.address 
-  .form__label,
-  select
-    width 48%
+<script setup>
+import CustomSelect from "@/layout/CustomSelect.vue";
+</script>
 
+<style scoped lang='stylus'>
+.create__address 
   .form__label
+    width 100%
+
     &-street
       max-width 100%
       margin-right 32px
-      width 100%
+
+    &-home
+      max-width: 304px
     
 </style>

@@ -70,8 +70,7 @@ section.place
                   span.controls_small 2+4 гостя
 
             .place__booking-bottom
-              a.btn.btn_green.btn_link.mr-24 Забронировать
-
+              router-link.btn.btn_green.btn_link.mr-24(:to="{name: 'Booking'}") Забронировать
               span.title_pre-middle от 6 500 ₽/сутки
 
         .place__service.mb-48
