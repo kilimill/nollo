@@ -4,7 +4,7 @@ section.not-found
     img.not-found__img(:src="getObject().img")
     p.text_middle {{ getObject().text }}
 
-    router-link.btn.btn_link(:to="getObject().href", v-if="getObject().href") Добавить турбазу
+    router-link.btn.btn_green.btn_link(:to="{name: getObject().href}", v-if="getObject().href") Добавить турбазу
 </template>
 
 <script setup>
@@ -21,7 +21,7 @@ const notFoundeds = reactive({
   places: {
     img: "./404/favorites.jpg",
     text: "Вы еще не добавили ни одного объекта.",
-    href: "/add",
+    href: "Added",
   },
   booking: {
     img: "./404/favorites.jpg",

@@ -29,6 +29,8 @@ import ScrollableDecorator from "@/layout/ScrollableDecorator.vue";
 
 <style lang="stylus" scoped>
 .contacts {
+  background-color #FFFFFF
+  
   .form__description {
     margin: 32px 0 40px;
     height: 108px;

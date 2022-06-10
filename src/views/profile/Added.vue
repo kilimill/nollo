@@ -4,14 +4,13 @@ section.added
     img.added__img.mb-16(src="@/assets/img/details/added.jpg") 
     h2.title_up-middle.added__title.mb-16 Объект добавлен
     p.text_middle.opacity-50.mb-32 Перед публикацией модератор проверит все данные. Вы можете отслеживать статус в своём профиле.
-    button.btn.btn_green 
-      span.btn__content Понятно
+    router-link.btn.btn_green(:to="{ name: 'Home' }") Понятно
 </template>
 
 <style scoped lang='stylus'>
 .added {
-  padding 56px 80px
-  
+  padding: 56px 80px;
+
   &__inner {
     max-width: 470px;
     width: 100%;

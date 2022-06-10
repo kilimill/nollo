@@ -2,20 +2,22 @@
 section.profile
   .container
     .wrapper.wrapper-h-btw
-      Aside
+      Aside(
+        @findNextComponent="findNextComponent",
+        :list="componentList",
+        :activeIndex="currentComponent.id"
+      )
       //- PersonalData
       .profile__content
-        //- PersonalData
-        Favorites
-        //- ProfileBooking
+        transition(name="fade", mode="out-in")
+          component(:is="currentComponent.name")
 </template>
 
 <script setup>
 import Aside from "@/layout/Aside";
-// import PersonalData from "@/components/profile/PersonalData"
-import Favorites from "@/components/profile/Favorites"
-// import Places from "@/components/profile/Places"
-// import ProfileBooking from "@/components/profile/ProfileBooking";
+import tabComponents from "@/helpers/tabComponents/index";
+const { componentList, currentComponent, findNextComponent } =
+  tabComponents("profile");
 </script>
 
 <style scoped lang='stylus'>

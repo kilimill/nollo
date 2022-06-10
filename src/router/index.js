@@ -58,27 +58,22 @@ const routes = [{
       title: 'Profile',
       key: 5
     },
-    children: [{
-        path: 'reservation',
-        name: 'Reservation',
-        component: () => import('@/views/profile/Reservation'),
-      },
-      {
-        path: 'added',
-        name: 'Added',
-        component: () => import('@/views/profile/Added'),
-      },
-    ]
+    // children: [{
+    //     path: 'reservation',
+    //     name: 'Reservation',
+    //     component: () => import('@/views/profile/Reservation'),
+    //   },
+    //   {
+    //     path: '/added',
+    //     name: 'Added',
+    //     component: () => import('@/views/profile/Added'),
+    //   },
+    // ]
   },
   {
     path: '/create',
     name: 'Create',
     component: () => import('@/views/profile/Create'),
-  },
-  {
-    path: '/ccc',
-    name: 'ccc',
-    component: () => import('@/components/create/Index'),
   },
   // {
     // path: "/:catchAll(.*)",
@@ -87,33 +82,33 @@ const routes = [{
 
 
 
-  // {
-  //   path: '/reservation',
-  //   name: 'Reservation',
-  //   component: () => import('@/views/profile/Reservation'),
-  //   meta: {
-  //     title: 'Reservation',
-  //     key: 6
-  //   }
-  // },
-  // {
-  //   path: '/create',
-  //   name: 'Create',
-  //   component: () => import('@/views/profile/Create'),
-  //   meta: {
-  //     title: 'Create',
-  //     key: 7
-  //   }
-  // },
-  // {
-  //   path: '/added',
-  //   name: 'Added',
-  //   component: () => import('@/views/profile/Added'),
-  //   meta: {
-  //     title: 'Added',
-  //     key: 8
-  //   }
-  // },
+  {
+    path: '/reservation',
+    name: 'Reservation',
+    component: () => import('@/views/profile/Reservation'),
+    meta: {
+      title: 'Reservation',
+      key: 6
+    }
+  },
+  {
+    path: '/create',
+    name: 'Create',
+    component: () => import('@/views/profile/Create'),
+    meta: {
+      title: 'Create',
+      key: 7
+    }
+  },
+  {
+    path: '/added',
+    name: 'Added',
+    component: () => import('@/views/profile/Added'),
+    meta: {
+      title: 'Added',
+      key: 8
+    }
+  },
   {
     path: '/terms',
     name: 'Terms',

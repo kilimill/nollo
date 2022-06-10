@@ -5,9 +5,9 @@
     :clearable="true",
     monthNameFormat="long",
     locale="ru",
-    range,
-    multiCalendars,
-    placeholder="Select Date",
+    :range="multiCalendars",
+    :multiCalendars="multiCalendars",
+    :placeholder="placeholder",
     autoApply,
     required,
     :minDate="new Date()",
@@ -23,7 +23,7 @@
 
 
 <script setup>
-import { ref } from "vue";
+import { defineProps, ref } from "vue";
 import Datepicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 import {
@@ -31,10 +31,16 @@ import {
   ArrowLeftCalendar,
   ArrowRightCalendar,
 } from "@/layout/icon/index";
-// import "@vuepic/vue-datepicker/src/VueDatePicker/style/main.scss";
+
+defineProps({
+  multiCalendars: Boolean,
+  placeholder: String,
+});
+
 const picked = ref();
 </script>
 
 <style scoped lang='stylus'>
 @import '@/assets/styles/vars.styl';
+
 </style>

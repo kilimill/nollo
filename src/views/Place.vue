@@ -1,6 +1,7 @@
 <template lang="pug">
 section.place
   .container
+    BreadCrumbs
     .wrapper.wrapper_h-btw
       section.place__content
         h1.title_bigger.mb-32 Коттедж «Ультрасовременный домик»
@@ -23,14 +24,9 @@ section.place
         form.form.place__form.mb-40
           h3.title_middle.mb-24 Доступные номера
           .form__grid.form__grid_2.place__form-inner
-            label.form__label.form__label_with-icon
-              CalendarIcon.form__label-icon
-              input.form__input.controls_middle(placeholder="E-mail")
-              span.form__placeholder Телефон или e-mail
-            label.form__label.form__label_with-icon
-              CalendarIcon.form__label-icon
-              input.form__input.controls_middle(placeholder="E-mail")
-              span.form__placeholder Телефон или e-mail
+            DataPicker(:multiCalendars="false", placeholder="Дата заезда")
+
+            DataPicker(:multiCalendars="false", placeholder="Дата выезда")
 
           .form__grid.form__grid_2
             .form__label.wrapper.wrapper_h-btw
@@ -117,10 +113,12 @@ section.place
 import { reactive, ref } from "vue";
 import Slider from "@/layout/Slider";
 import Accordion from "@/layout/Accordion";
+import BreadCrumbs from "@/layout/BreadCrumbs";
 import CardPlace from "@/layout/CardPlace";
 import Suggestions from "@/layout/Suggestions";
+import DataPicker from "@/layout/DataPicker";
 import {
-  CalendarIcon,
+  // CalendarIcon,
   ShareIcon,
   HeartIcon,
   FoodIcon,

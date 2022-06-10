@@ -2,17 +2,21 @@
 aside.aside
   nav.aside__nav
     ul.aside__list
-      li.aside__list-item(v-for="(item, i) in asideList", :key="i")
-        a.aside__link.wrapper(@click="$emit('my-event', item.link)")
-          //- ProfileIcon.icon
-          p.controls_middle {{ item.name }}
+      li.aside__list-item(
+        v-for="item in list",
+        :key="item.id",
+        :class="{ active: activeIndex === item.id }"
+      )
+        button.aside__link.wrapper.wrapper_v-ctr(
+          @click="$emit('findNextComponent', item.name)"
+        )
+          component.icon(:is="item.icon", v-if="item.icon")
+          span.controls_middle {{ item.title }}
 </template>
-
 <script setup>
-// import { ProfileIcon } from "@/layout/icon/index";
-import { defineProps } from "vue";
 defineProps({
-  asideList: Array,
+  list: Array,
+  activeIndex: Number,
 });
 </script>
 
@@ -26,13 +30,13 @@ defineProps({
 
   &__list {
     &-item {
+      opacity .7
       position: relative;
-      border-radius: var(--radius-def);
-      padding: 16px 16px 16px 24px;
       margin-top: 12px;
       overflow: hidden;
       background-color: transparent;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, opacity .3s;
+      border-radius: var(--radius-def);
 
       &:first-child {
         margin-top: 0;
@@ -50,8 +54,9 @@ defineProps({
         transition: opacity 0.3s;
       }
 
-      &:hover {
-        background-color: #fff;
+      &:hover, &.active {
+        background-color: #FFFFFF;
+        opacity 1
 
         &::before {
           opacity: 1;
@@ -61,8 +66,25 @@ defineProps({
   }
 
   &__link {
+    width: 100%;
+    height var(--heigth-elems)
+    padding: 0 16px 0 24px;
+
     .icon {
       margin-right: 16px;
+    }
+  }
+}
+
+.main.light {
+  .aside__list-item {
+    &:hover, &.active {
+      opacity 1
+      background-color: $gray;
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }

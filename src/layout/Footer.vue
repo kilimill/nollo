@@ -3,7 +3,7 @@ footer.footer
   .container
     .footer__inner
       .footer__column
-        a.footer__link(href="#")
+        router-link.footer__link(:to="{name: 'Home'}")
           LogoGreen.logo
 
         p.text_middle © Официальный сайт nollo.ru, 2022 Все права защищены
@@ -20,7 +20,7 @@ footer.footer
         nav.footer__nav
           ul.footer__list
             li.footer__list-item(v-for="(item, i) in footerNav", :key="i")
-              router-link.controls_middle(:to="item.link") {{ item.title }}
+              router-link.controls_middle(:to="{name: item.link}") {{ item.title }}
 
       .footer__column
         h6.title_middle Расскажи о нас друзьям
@@ -41,27 +41,27 @@ import { VkIcon, OdnoklassnikiIcon, LogoGreen } from "@/layout/icon/index";
 const footerNav = reactive([
   {
     title: "О проекте",
-    link: "/about",
+    link: "About",
   },
   {
     title: "Добавить базу отдыха",
-    link: "/about",
+    link: "Create",
   },
   {
     title: "Регистрация",
-    link: "/about",
+    link: "Authorization",
   },
   {
     title: "Контакты",
-    link: "/about",
+    link: "Contacts",
   },
   {
     title: "Политика конфиденциальности",
-    link: "/about",
+    link: "Terms",
   },
   {
     title: "Пользовательское соглашение",
-    link: "/about",
+    link: "Terms",
   },
 ]);
 </script>

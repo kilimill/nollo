@@ -12,7 +12,7 @@
           input.form__input(type="text", required)
           span.form__placeholder Место или наименование турбазы
 
-        DataPicker
+        DataPicker(:multiCalendars="true", placeholder="Даты заезда и выезда")
 
         CustomSelect
 
@@ -60,7 +60,7 @@ import { useRouter } from "vue-router";
 // script setup logic
 const router = useRouter();
 const sesf = () => {
-  router.push("/profile/reservation");
+  router.push({ name: "Reservation" });
 };
 </script>
 
@@ -79,8 +79,8 @@ const sesf = () => {
   }
 
   &__form {
-    position relative
-    z-index 5
+    position: relative;
+    z-index: 5;
     max-width: 1152px;
     margin: 0 auto;
     display: flex;
@@ -135,9 +135,9 @@ const sesf = () => {
   .map {
     width: 100%;
     height: 540px;
-    border-radius: 32px
-    overflow hidden
-    margin-top -66px
+    border-radius: 32px;
+    overflow: hidden;
+    margin-top: -66px;
 
     &__img {
       width: 100%;

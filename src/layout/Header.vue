@@ -3,7 +3,7 @@ header.header
   .container
     .header__inner
       .header__wrapper
-        a.header__wrapper(href="#")
+        router-link.header__wrapper(:to="{name: 'Home'}")
           img.logo(src="@/assets/img/logo.png")
 
           span.controls_middle.header__text Найди идеальное место для своего отдыха
@@ -48,7 +48,7 @@ import {
   VkIcon,
 } from "@/layout/icon/index";
 import { useRouter } from "vue-router";
-const router = useRouter()
+const router = useRouter();
 const logIn = () => {
   router.push({ name: "Authorization" });
 };

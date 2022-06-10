@@ -1,14 +1,11 @@
 html,
 body
 	height 100%
-	ff $inter
+	font-family $inter
 	font-weight 400
 	font-size 14px
 	line-height 14px
 	color #222222
-	// background-color #000
-	// background-color #fff
-	// background-color #70e3b2
 	background-color $gray
 
 .fade-enter-active,
@@ -244,110 +241,8 @@ body
 		width: 16px;
 		height: 16px;
 
-.calendar 
-	width 100%
 
-body
-	.dp
-		&__theme_light 
-			--dp-background-color: #FFFFFF;
-			--dp-text-color: #212121;
-			--dp-hover-icon-color: #BFFDE3 ;
-			--dp-hover-color: #E6FEF4;
-			--dp-hover-text-color: #049A5B;
-			--dp-hover-icon-color: #BFFDE3;
-			--dp-primary-color: $green;
 
-		&__today
-			border none
 
-		&__input
-			height var(--heigth-elems)
-			background-color #F5F5F5
-			border none
-			border-radius var(--radius-def)
-			padding-left 72px
-
-			&:placeholder
-				color #222222 !important
-
-			&_icon
-				margin-left 24px
-
-		&__calendar
-			&_header
-				justify-content space-between
-				position relative
-				color $green
-				text-transform capitalize
-				opacity 0.5
-
-				&_item
-					display flex
-					align-items center
-					justify-content center
-
-				&_separator
-					display none
-
-			&_item,
-			&_header
-				font-size 12px
-				line-height 12px
-				font-weight 500
-
-			&_next
-				margin-left 0
-
-			&_wrap
-				ff $inter
-
-		&__menu
-			border-radius var(--radius-def)
-			border none
-			padding 24px 24px 32px 24px
-			box-shadow: 0px 15px 39px -31px rgba(0, 0, 0, 0.11);
-
-		&__range_between
-			background-color #E6FEF4
-
-		&__range
-			&_start,
-			&_end
-				border-radius var(--radius-8)
-		
-		&__flex_display
-			.dp__instance_calendar
-				.dp__month_year_col_nav
-					display inline-block
-					top 50%
-					transform translateY(-50%)
-					position absolute
-					right 0
-
-				&:first-child
-					margin-right 30px
-
-					.dp__month_year_col_nav
-						right auto
-						left 0
-
-		&__month_year
-			&_select
-				font-weight 500
-				font-size 16px
-				line-height 20px
-				margin-right 5px
-				width auto
-				text-transform capitalize
-
-			&_row
-				position relative
-				display flex
-				justify-content center
-				margin-bottom 24px
-
-		&__cell_inner
-			padding 10px
 
 

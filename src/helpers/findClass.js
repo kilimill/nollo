@@ -16,7 +16,6 @@ const routeListGradient = [
 export default function findClass () {
   const router = useRoute();
   const checkRoute = computed(() =>{
-    console.log(router)
     if (Object.values(routeListLight).includes(router.name)) {
       return 'light'
     }
