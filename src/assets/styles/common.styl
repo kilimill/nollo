@@ -1,0 +1,273 @@
+html,
+body
+	height 100%
+	font-family $inter
+	font-weight 400
+	font-size 14px
+	line-height 14px
+	color #222222
+	background-color $gray
+
+body
+	height 100%
+	
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+body.burger-open {
+	.main {
+		max-height 600px
+		min-height 100vh
+		overflow-y: hidden;
+	}
+
+  .burger-menu {
+    opacity 1
+    width 100%
+  }
+
+	.header__burger-icon--close {
+		opacity 1
+		width 20px
+		height 20px
+	}
+
+	.header__burger-icon--lines {
+		opacity 0
+		width 0
+	}
+}
+
+#app
+	min-height 100%
+
+.main
+	min-height 100vh
+	height 100%
+
+	.ps__rail-y 
+		right 8px !important
+		height 50% !important
+		background-color transparent !important
+
+	.ps__thumb-y 
+		width 4px
+		padding 16px 0
+		background-color transparent
+
+		&::before
+			content ''
+			display inline-block
+			height 100%
+			width 100%
+			background-color #C8C8C8
+			opacity .48
+			border-radius: 8px;
+			cursor pointer
+
+	.ps__rail-y:hover > .ps__thumb-y::before, 
+	.ps__rail-y:focus > .ps__thumb-y::before, 
+	.ps__rail-y.ps--clicking .ps__thumb-y::before {
+    background-color: #999;
+    width: 11px;
+	}
+
+	.ps__rail-y:hover > .ps__thumb-y, 
+	.ps__rail-y:focus > .ps__thumb-y, 
+	.ps__rail-y.ps--clicking .ps__thumb-y {
+    background-color: transparent;
+    width: 11px;
+	}
+
+.container
+	max-width 1361px
+	width 100%
+	padding 0 24px
+	margin 0 auto
+
+	&-mid
+		max-width 894px
+		width 100%
+		padding 0 24px
+		margin 0 auto
+
+		@media $tablet 
+			max-width 637px
+
+	&_mob-hide
+		@media $mobile 
+			max-width 100%
+			padding 0
+
+.wth_arrow-down{
+	display flex
+	align-items center
+	justify-content center
+	
+	.icon {
+		margin-left 16px
+		transition transform .3s
+	}
+
+	&.active,
+	&[data-state='active'] {
+		.icon {
+			transform rotate(180deg)
+		}
+	}
+}
+
+.logo
+	width 88px
+	height 56px
+	object-fit contain
+	object-position center
+
+	&_black path
+		fill $black
+
+	&_green path
+		fill $green
+
+
+
+.details
+	display flex
+
+	&__item
+		margin-left var(--offset-mid)
+		display flex
+		align-items center
+
+		&:first-child
+			margin-left 0
+
+	.icon
+		margin-right 8px
+
+		path
+			stroke #444444
+
+	.controls_small
+		color #444444
+
+.border-btm
+	pos relative
+	padding-bottom 25px
+
+	&:before
+		content ''
+		pos absolute
+		bottom 0
+		left 0
+		width 100%
+		height 1px
+		background-color #222222
+		opacity 0.32
+
+.total 
+	display: flex;	
+	justify-content space-between
+	align-items center
+	border-radius: var(--radius-8);
+	padding: 8px 16px;
+	background-color: #fff;
+	margin-top auto
+
+.social 
+	&__item 
+		display: inline-block;
+		margin-left: 12px;
+
+		&:first-child 
+			margin-left: 0;
+
+	&__btn 
+		display: block;
+		padding 5px
+		line-height 0
+
+.hint {
+	@media $desktop {
+		&__ico {
+			opacity .2
+			transition opacity .3s
+		}
+
+		&:hover {
+			.hint__ico {
+				opacity .5
+			}
+		}
+	}
+}
+
+.custom-scroll 
+	&::-webkit-scrollbar-thumb
+		border-radius 8px
+		opacity: 0.48
+		background-color #C8C8C8
+
+	&::-webkit-scrollbar 
+		width: 4px;
+		background-color: transparent; 
+
+.files__btn {
+	svg {
+		width: 24px;
+		height: 24px;
+		stroke: #fff;
+	}
+
+	&.selected path {
+		fill: #fff
+	}
+}
+
+.notify-count {
+	display flex
+	align-items center
+	justify-content center
+	min-width: 20px
+	padding 0 5px
+	height 20px
+	border-radius: 16px
+	background-color $green
+	color #fff
+}
+
+.ps__rail-y {
+  position: absolute
+}
+
+.not-mobile-hide {
+	@media (min-width: 1025px) {
+		display none !important
+	}
+}
+
+.desktop-hide {
+	@media $desktop {
+		display none !important
+	}
+}
+
+.not-desktop-hide {
+	@media (max-width: 1439px) {
+		display none !important
+	}
+}
+
+.mobile-hide {
+	@media $mobile {
+		display none !important
+	}
+}

@@ -1,0 +1,99 @@
+@import '../vars.styl';
+
+.files {
+  &__input {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &__btn {
+    &:first-child {
+      @media $desktop {
+        margin-right: 40px;
+      }
+
+      @media $tablet {
+        margin-right: auto;
+        order: 1;
+      }
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-8);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    transition: opacity 0.3s;
+
+    @media $desktop {
+      opacity: 0;
+    }
+
+    @media $tablet {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 16px;
+      opacity: 1;
+    }
+
+    &--single {
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 16px;
+
+      .files__btn {
+        margin-right 0
+      }
+    }
+
+  }
+
+  &__list {
+    @media $mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+    height: 120px;
+    color: white;
+
+    @media $desktop {
+      &:hover {
+        .files__controls {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-8);
+  }
+}
+
+.file__drag-drop {
+  position: relative;
+  padding: 24px;
+  border: 1px dashed $green;
+  border-radius: var(--radius-def);
+}

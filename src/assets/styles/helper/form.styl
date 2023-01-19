@@ -1,0 +1,354 @@
+.form
+  &__description,
+  &__wrapper
+    pos relative
+    border-radius var(--radius-def)
+  
+  &__description
+    background-color $gray
+    padding 30px 8px 0 24px
+    border: 2px solid transparent;
+
+    &-text
+      height 100%
+      padding-right 20px
+      padding-bottom 20px
+      font-weight 500
+      font-size 16px
+      width 100%
+      resize none
+
+  &__wrapper
+    position relative
+    width: 100%;
+    background-color $gray
+
+    &_white 
+      background-color #fff
+
+    .form__label 
+      background-color inherit
+
+    .form__input 
+      position absolute
+      width calc(100% - 74px)
+      top 31px
+      left 24px
+      z-index 1
+      &[type=number]::-webkit-outer-spin-button,
+      &[type=number]::-webkit-inner-spin-button 
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+
+      .form__label-clear
+        opacity 1
+        // pointer-events auto
+
+  &__label
+    width 100%
+    height 100%
+    display flex
+    align-items center
+    height var(--heigth-elems)
+    padding 12px var(--offset-mid)
+    border: 2px solid transparent;
+    border-radius var(--radius-def)
+    background-color $gray
+    transition border-color .3s, background-color .3s
+
+    &-icon
+      width 24px
+      height 24px
+      margin-right 16px
+      opacity .7
+
+      path
+        stroke $black
+              
+    &-clear
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      right 24px
+      font-size 0
+      opacity 0
+      height 14px
+      cursor pointer
+      transition opacity .3s
+
+      .icon
+        width 14px
+        height 14px
+        margin-right 0
+
+        path 
+          stroke #A0A3BD
+
+  &__placeholder
+    position absolute
+    left 24px
+    top 50%
+    transform translateY(-50%)
+    font-weight 500
+    font-size 16px
+    line-height 20px
+    opacity .7
+    pointer-events none
+    z-index 2
+
+  &__input
+    c $black
+    width 100%
+    font-weight 500
+    font-size 16px
+    line-height 20px
+    margin-top auto
+
+    &:focus ~ label 
+      background-color #fff
+      border-color $black
+
+    &:focus ~ button 
+      opacity 1
+      pointer-events auto
+
+  &__controls
+    display flex
+    align-items center
+
+    &-btn
+      display flex
+      align-items center
+      justify-content center
+      width 30px
+      height 30px
+      border 2px solid transparent
+      border-radius 50%
+      background-color #fff
+      transition border-color .2s
+
+      &:disabled .icon path
+        fill #C8C8C8
+
+      &:not([disabled]):hover
+        border-color #C8C8C8
+
+      &:not([disabled]):focus
+        box-shadow 0 0 0 8px #A8E8CD
+        border-color $green
+
+        .icon path
+          fill $green
+
+      &:not([disabled]):active
+        border-color $green
+
+        .icon path
+          fill $green
+
+      .icon
+        width 10px
+
+        path 
+          stroke transparent
+          fill $black
+          transition stroke .2s
+
+      &--plus .icon
+        height 10px
+
+      &--minus .icon
+        height 2px
+        
+
+    &-numb
+      font-size 16px
+      line-height 32px
+      font-weight 700
+      margin 0 16px
+
+  &__checkbox-label
+    cursor pointer
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #BFFDE3;
+        border-radius: 0.25em;
+        margin-right: 12px
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+    }
+
+    &_white span::before {
+      background-color #fff
+    }
+
+    input {
+      position: absolute
+      z-index: -1
+      opacity: 0
+    }
+
+    input:not(:disabled):not(:checked)+span:hover::before {
+      border-color: #BFFDE3;
+    }
+
+    input:not(:disabled):active+span::before {
+      background-color: #BFFDE3;
+      border-color: #BFFDE3;
+    }
+
+    input:checked+span::before
+      border-color #BFFDE3
+      background-color $green
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.71947 5.00006C1.53181 4.8313 1.28729 4.73973 1.03494 4.74373C0.782594 4.74773 0.541091 4.84699 0.358876 5.02162C0.176662 5.19624 0.0672143 5.4333 0.0524866 5.68525C0.037759 5.9372 0.118841 6.1854 0.279469 6.38006L2.49947 8.71006C2.59242 8.80756 2.7041 8.88528 2.82783 8.93855C2.95155 8.99182 3.08476 9.01955 3.21947 9.02006C3.35346 9.02084 3.48624 8.99469 3.60992 8.94315C3.73361 8.89162 3.84568 8.81575 3.93947 8.72006L10.7195 1.72006C10.8114 1.62551 10.8838 1.51378 10.9325 1.39124C10.9813 1.26871 11.0054 1.13778 11.0036 1.00592C11.0017 0.874059 10.9739 0.743857 10.9217 0.622745C10.8695 0.501634 10.794 0.391986 10.6995 0.300061C10.6049 0.208135 10.4932 0.135733 10.3707 0.0869889C10.2481 0.0382443 10.1172 0.0141116 9.98533 0.0159687C9.85347 0.0178259 9.72327 0.0456365 9.60215 0.0978126C9.48104 0.149989 9.3714 0.225509 9.27947 0.320061L3.22947 6.58006L1.71947 5.00006Z' fill='white'/%3E%3C/svg%3E%0A");
+
+    input:disabled+span::before
+      background-color: #e9ecef
+
+  &__radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  &__label-radio 
+    cursor pointer
+    span 
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+
+      &::before 
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 2px solid #BFFDE3;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 12px 12px;
+        margin-right 12px
+  
+    input:checked+span::before
+      border-color: $green;
+      background-color: $green;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+      
+    input:disabled+span
+      opacity .7
+
+.hidden-form
+  position: relative;
+  width: 100%;
+  height: 64px;
+
+  &__content
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity 0
+    transition opacity .3s
+
+  .hidden-form__btn
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transition: opacity 0.3s;
+
+  .form__input 
+    margin-top: 0;
+
+  &.active 
+    .hidden-form__btn
+      opacity: 0;
+      pointer-events: none;
+    
+    .hidden-form__content 
+      opacity 1
+
+.calendar,
+.form__wrapper_with-icon
+  .form__placeholder,
+  .form__input 
+    left 64px
+    z-index 1
+    
+  .form__input 
+    width calc(100% - 114px)
+
+.form__description-text ~ .form__placeholder
+  top 30px
+
+.select .form__input,
+.form__wrapper .form__input,
+.form__description .form__description-text {
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.form__input,
+.calendar,
+.form__description-text {
+  &:focus~.form__placeholder, 
+  &:not(:placeholder-shown)~.form__placeholder,
+  &.filled .form__placeholder, {
+    font-size: 12px;
+    color: #111;
+    font-size 12px
+    line-height 12px
+    top 12px
+    transform translateY(0)
+    opacity .3
+  } 
+}
+
+.form__input {
+  &:focus~.form__label-clear, 
+  &:not(:placeholder-shown)~.form__label-clear {
+    opacity 1
+  }
+}
+
+.form__wrapper .error, 
+.form__description.error,
+.select.error {
+  border-color: #F72921;
+  background-color: #FFF2F7 ;
+  
+  & ~ .icon,
+  &.icon {
+    path,
+    rect {
+      stroke #F72921
+    }
+  }
+
+  &~.form__placeholder,
+  & .form__placeholder {
+    color #F72921
+  }
+}
+
+.select.error .select__btn {
+  border-color: #F72921 !important;
+}

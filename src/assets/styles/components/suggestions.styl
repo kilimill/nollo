@@ -1,0 +1,36 @@
+.suggestions
+  margin-top 80px
+
+  &__content 
+    position relative
+    width 100%
+
+    .swiper-button-next, 
+    .swiper-button-prev
+      margin 0
+      background-color #fff
+      box-shadow 0px 1px 16px 2px rgba(0, 0, 0,  0.11) 
+
+      &[disabled]
+        opacity .5
+        
+    .swiper-button-next 
+      transform translate(50%, -50%)
+      right 0
+      
+      @media $tablet 
+        right 10px
+
+    .swiper-button-prev
+      transform translate(-50%, -50%)
+      left 0
+
+      @media $tablet 
+        left 10px
+      
+@media $mobile 
+  .suggestions
+    margin-top 56px
+
+    &__head
+      padding 0 24px

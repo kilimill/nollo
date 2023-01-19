@@ -1,0 +1,169 @@
+.aside {
+  max-width: 416px;
+  width: 100%;
+  margin-right: var(--offset-up-mid);
+  flex-shrink 0
+
+  @media $tablet {
+    max-width 288px
+  }
+
+  &__list {
+    &-item {
+      margin-top: 12px;
+      position: relative;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: var(--heigth-elems);
+    // overflow: hidden;
+    padding: 0 25px 0 24px;
+    border-radius: 8px 16px 16px 8px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 8px;
+      height: 100%;
+      background-color: $green;
+      border-radius: 16px 0px 0px 16px;
+      opacity: 0;
+      transition: opacity 0.3s, background-color .3s;
+    }
+
+    &-text,
+    & > .icon {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    // @media $desktop {
+    // &::before {
+    // }
+
+    &:hover, &.active, &:focus {
+      background-color: #FFFFFF;
+
+      .aside__link-text,
+      & > .icon {
+        opacity: 1;
+      }
+    }
+
+    &.active::before {
+      opacity: 1;
+    }
+    // }
+
+    &.error {
+      background-color #FFF2F7 !important
+
+      &.active {
+        // background-color #FFF2F7 
+
+        &::before {
+          background-color #F72921
+        }
+      }
+    }
+
+    &-icons {
+      margin-left: auto;
+    }
+  }
+}
+
+.main.light {
+  .aside__link {
+    &:hover, &.active, &:focus {
+      opacity: 1;
+      background-color: $gray;
+    }
+
+    &.active::before {
+      opacity: 1;
+    }
+  }
+}
+
+@media $mobile {
+  .aside {
+    max-width 100%
+    min-width 100%
+    overflow: auto;
+    margin-bottom 32px
+
+    &__list {
+      display flex
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      // overflow-x scroll
+      white-space: nowrap;
+      min-width 100%
+      padding-bottom 10px
+      &-item {
+        display inline-block
+        margin-top: 0;
+        margin-left 24px
+        padding-bottom 5px
+
+        &:last-child {
+          margin-right 24px
+        }
+      }
+    }
+
+    .icon {
+      width 16px
+      height 16px
+    }
+
+
+    &__link {
+      padding 0
+      border-radius 0
+      height 38px
+
+      &::before {
+        width 100%
+        height 6px
+        border-radius 8px
+      }
+
+      &.error {
+        background-color transparent !important
+
+        &.active {
+          // background-color #FFF2F7 
+
+          &::before {
+            background-color $green;
+          }
+        }
+      }
+
+      &.active,
+      &:hover {
+        background-color transparent
+      }
+
+      &.active .aside__link-text,
+      &__link > .icon {
+        opacity: 1;
+      }
+
+      &.active::before {
+        opacity: 1;
+      }
+    }
+  }
+}

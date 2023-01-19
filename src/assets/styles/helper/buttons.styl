@@ -1,0 +1,178 @@
+.btn
+  pos relative
+  display inline-block
+  text-align center
+  padding 0 34px
+  font-size 16px
+  line-height var(--heigth-elems)
+  font-weight 500
+  border-radius var(--radius-def)
+  cursor pointer
+  transition background-color .3s, color .3s
+
+  &[disabled]
+    opacity .5
+
+  &_link
+    display inline-block
+
+  &_block {
+    display block
+    width 100%
+  }
+
+  &_uncover {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height 48px
+    transform: translate(-50%, 50%);
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 12px -16px rgba(0, 0, 0, 0.16), 0px -12px 12px -16px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+  }
+
+  &_control
+    display flex
+    align-items center
+    padding 0 20px
+    line-height 48px
+    color $green
+    background-color transparent
+
+    &::before
+      content 'Загрузка...'
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      display inline-block
+      color $green
+      font-size 16px
+      font-weight 500
+      display none
+
+    span 
+      line-height inherit
+
+    .icon
+      margin-right 16px
+
+      circle,
+      path
+        transition stroke .3s
+        stroke $green
+
+    &.selected
+      color #049A5B
+
+      
+      circle,
+      path
+        stroke #049A5B
+        fill #049A5B
+
+
+    &:hover
+      color #049A5B
+
+      .icon
+        circle,
+        path
+          stroke #049A5B
+
+    &:focus
+      background-color #BFFDE3
+
+    &.btn_black:hover
+      background-color #BFFDE3
+      color $black
+
+      .icon
+        circle,
+        path
+          stroke $black 
+      
+  &_black
+    color $black
+
+    .icon 
+      path 
+        stroke $black
+
+  &_white
+    background-color #FFFFFF
+    border: 2px solid #BFFDE3
+    color $green
+
+    &::before
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99967 1.66665C8.3515 1.66664 6.74033 2.15539 5.36992 3.07106C3.99951 3.98674 2.93141 5.28823 2.30068 6.81095C1.66995 8.33367 1.50492 10.0092 1.82646 11.6257C2.14801 13.2422 2.94168 14.7271 4.10712 15.8925C5.27255 17.058 6.75741 17.8516 8.37392 18.1732C9.99043 18.4947 11.666 18.3297 13.1887 17.699C14.7114 17.0682 16.0129 16.0001 16.9286 14.6297C17.8443 13.2593 18.333 11.6482 18.333 9.99998' stroke='%2306CC79' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+    &:hover
+      color #049A5B
+
+  &_green
+    background-color $green
+    color #fff
+
+    &::before 
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99967 1.66658C8.3515 1.66658 6.74033 2.15533 5.36992 3.071C3.99951 3.98668 2.93141 5.28817 2.30068 6.81089C1.66995 8.33361 1.50492 10.0092 1.82646 11.6257C2.14801 13.2422 2.94168 14.727 4.10712 15.8925C5.27255 17.0579 6.75741 17.8516 8.37392 18.1731C9.99043 18.4947 11.666 18.3296 13.1887 17.6989C14.7114 17.0682 16.0129 16.0001 16.9286 14.6297C17.8443 13.2593 18.333 11.6481 18.333 9.99992' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+    &:hover
+      background-color #05B26A
+      color #fff
+
+    &:focus
+      box-shadow 0 0 0 6px #BFFDE3
+
+  &_chat
+    display flex
+    align-items center
+    justify-content center
+    @media $tablet {
+      padding 0
+      width 64px
+      flex-shrink: 0
+    }
+
+  &__content 
+    pointer-events none
+
+  &.loading
+    .btn__content,
+    svg,
+    span
+      opacity 0
+
+    &::before
+      display block
+
+
+  &_red
+    color #F72921
+
+    .icon 
+      path 
+        stroke #F72921
+    
+  &_white,
+  &_green
+    &::before 
+      content ''
+      position absolute
+      left 43%
+      top 38%
+      width 20px
+      height 20px
+      background-size contain
+      background-repeat no-repeat
+      background-position center
+      animation: btnLoad 1.4s infinite linear;
+      display none
+
+@keyframes btnLoad 
+  0% 
+    transform: rotate(0deg)
+  
+  100% 
+    transform: rotate(360deg)

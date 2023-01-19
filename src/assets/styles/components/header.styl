@@ -1,0 +1,163 @@
+.content-white {
+  .header {
+    background-color $gray
+  }
+}
+
+.header {
+  position: relative;
+  // z-index: 33;
+  margin-bottom: 40px;
+
+  &__inner {
+    position relative
+    padding: 39px 0;
+    // border-bottom: 2px solid #D9E6DC;
+    justify-content: space-between;
+
+    &::before {
+      content ''
+      position absolute
+      left 0
+      bottom 0
+      width 100%
+      height 2px
+      background-color $black
+      opacity 0.08
+      
+      @media $mobile {
+        left -10%
+        width 120%
+      }
+    }
+
+    @media $mobile {
+      border-bottom: none;
+      padding 20px 0
+    }
+  }
+
+  &__inner, &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__burger {
+    @media $mobile {
+      width 40px
+      height 40px
+      display flex
+      align-items center
+      justify-content center
+
+      &-icon{
+        transition opacity .3s, width .3s
+
+        &--lines {
+          width 40px
+        }
+
+        &--close {
+          opacity 0
+          width 0
+        }
+      }
+    }
+  }
+
+  .logo { 
+    @media $mobile {
+      width 64px
+      height 40px
+    }
+  }
+
+  &__burger,
+  .logo {
+    @media $mobile {
+      position relative
+      z-index 31
+    }
+  }
+
+  &__notify {
+    position relative
+
+    &.alarm {
+      .notify-count {
+        opacity 1
+      }
+    }
+
+    .notify-count {
+      position absolute
+      width 12px
+      min-width auto
+      height 12px
+      right 0
+      top 2px
+      opacity 0
+      transform translate(50%, -50%)
+    }
+
+    .icon {
+      margin-right 0
+    }
+  }
+
+  &__text {
+    pos: relative;
+    max-width: 227px;
+    width: 100%;
+    padding-left: 27px;
+    margin-left: 24px;
+
+    &::before {
+      content: '';
+      pos: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 40px;
+      background-color: $black;
+    }
+  }
+
+  .header__location {
+    margin-left: 120px;
+  }
+
+  &__profile {
+    position: relative;
+    // padding-bottom: 17px;
+    // padding-top: 17px;
+    margin-right: 90px;
+
+    @media $mobile {
+      margin-right 0
+    }
+
+    &-content {
+      pointer-events: none;
+    }
+
+    &-default .icon {
+      width: 16px;
+      height: 16px;
+
+      @media $mobile {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-avatar {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+}

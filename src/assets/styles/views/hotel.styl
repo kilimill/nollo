@@ -1,0 +1,163 @@
+@import '../vars.styl';
+
+.hotel {
+  &__wrapper {
+    align-items: flex-start;
+  }
+
+  &__content {
+    max-width: 864px;
+    width: 100%;
+    border-radius: var(--radius-def);
+    padding: var(--offset-up-mid);
+    background-color: #fff;
+    margin-right: 32px;
+
+    @media $tablet {
+      max-width: 100%;
+      margin-right 0
+    }
+
+    @media $mobile {
+      max-width: 100%;
+      padding: 40px 24px;
+
+      .grid_2 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .grid {
+        grid-gap: 24px;
+      }
+    }
+  }
+
+  @media $mobile {
+    &__controls {
+      display: block;
+    }
+  }
+
+  .btn_control {
+    &:first-child {
+      margin-right: var(--offset-mid);
+    }
+  }
+
+  &__form {
+    @media $mobile {
+      margin-bottom: 32px;
+    }
+
+    &-inner {
+      margin-bottom: var(--offset-mid);
+    }
+  }
+
+  &__booking {
+    &-item {
+      display: flex;
+      min-height: 196px;
+      margin-bottom: 30px;
+      background-color: $gray;
+      border-radius: var(--radius-def);
+
+      @media $mobile {
+        display: block;
+      }
+    }
+
+    &-img {
+      max-width: 224px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-def);
+
+      @media $mobile {
+        max-width: 100%;
+        max-height: 196px;
+      }
+    }
+
+    &-bottom {
+      display flex
+      align-items center
+      justify-content space-between
+      
+      @media $mobile {
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+          text-align: center;
+          order: 1;
+        }
+        .form__controls {
+          order: 1
+        }
+        .title_pre-middle {
+          margin: 24px 0;
+        }
+      }
+    }
+
+    &-box {
+      width 100%
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--offset-mid) var(--offset-up-mid);
+
+      @media $mobile {
+        padding: var(--offset-mid);
+      }
+    }
+
+    .btn {
+      line-height: 48px;
+    }
+  }
+
+  &__contacts {
+    &-item {
+      svg {
+        vertical-align: text-top;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__conditions {
+    margin-bottom: 48px;
+  }
+
+  &__question {
+    border-radius: 16px;
+    margin-top: 72px;
+    overflow: hidden;
+    background: #FFFFFF;
+
+    @media $mobile {
+      margin-top: 38px;
+    }
+
+    &-box {
+      padding: 40px 40px 28px 40px;
+
+      @media $mobile {
+        padding: 40px 24px 16px 24px;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      object-position: center;
+
+      @media $mobile {
+        height: 267px;
+      }
+    }
+  }
+}

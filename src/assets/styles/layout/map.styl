@@ -1,0 +1,69 @@
+.map {
+	position relative
+	width: 100%;
+	height inherit
+	border-radius: 32px;
+	overflow: hidden;
+
+	@media $mobile {
+		border-radius: 0;
+	}
+
+	&__content {
+    position: relative;
+    height: 560px;
+    margin-bottom: 72px;
+    transition: height 0.3s;
+
+    @media $tablet {
+      height: 540px;
+    }
+
+    &.hidden {
+      height: 240px;
+    }
+	}
+
+	&__btn {
+		width: 172px;
+	}
+
+	.ymap-container {
+		height 100%
+	}
+	.ymaps-2-1-79-balloon__close+.ymaps-2-1-79-balloon__content {
+		margin-right 0
+		padding 0
+	}
+
+	.ymaps-2-1-79-balloon {
+		border-radius: 12px 12px 12px 0px;
+		margin-top 70px
+		overflow hidden
+	}
+
+	.balloon__slider {
+		.swiper-button-prev,
+		.swiper-button-next {
+			width 25px
+			height 25px
+			margin 0
+			transform translateY(-50%)
+			border-radius 5px
+			opacity .5
+
+			&[disabled] {
+				opacity 0
+			}
+
+			&:hover {
+				border-color transparent
+			}
+
+			&::before {
+				width 13px
+				height 13px
+			}
+		}
+	}
+}

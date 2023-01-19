@@ -1,0 +1,97 @@
+@import '../vars.styl';
+
+.search {
+  padding-top: 9px;
+  
+  &__form {
+    @media $mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-place {
+      max-width: 752px;
+      width: 100%;
+      margin-right: 32px;
+
+      @media $tablet {
+        max-width: 48%;
+        margin-right: 4%;
+      }
+
+      @media $mobile {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+    }
+
+    .wrapper {
+      @media $mobile {
+        display: block;
+      }
+    }
+
+    .calendar {
+      max-width: 304px;
+      margin-right: 32px;
+
+      @media $mobile {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  
+
+  &__special {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media $mobile {
+      flex-direction: column;
+    }
+
+    .form__wrapper, .select {
+      max-width: 220px;
+      width: 100%;
+      margin-right: 32px;
+      
+      @media $tablet {
+        max-width: 48%;
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+
+      @media $mobile {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .filter {
+    width: 100%;
+
+    @media $mobile {
+      order: 1;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__btn {
+    max-width: 304px;
+    width: 100%;
+
+    @media $tablet {
+      max-width: 100%;
+    }
+
+    @media $mobile {
+      max-width: 100%;
+      order: 2;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.grid
+  display: grid;
+  grid-gap: 32px;
+
+  &_1
+    grid-template-columns: repeat(1, 1fr);
+
+  &_2
+    grid-template-columns: repeat(2, 1fr);
+
+    @media $mobile 
+      grid-template-columns: repeat(1, 1fr);
+
+  &_3
+    grid-template-columns: repeat(3, 1fr);
+
+    @media $mobile 
+      grid-template-columns: repeat(1, 1fr);
+
+  &_4
+    grid-template-columns: repeat(4, 1fr);
+    
+    @media $mobile 
+      grid-template-columns: repeat(1, 1fr);

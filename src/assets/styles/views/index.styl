@@ -1,0 +1,312 @@
+.index {
+  position relative
+
+  &__head {
+    max-width: 600px;
+    text-align: center;
+    margin: 48px auto;
+
+    @media $mobile {
+      max-width: 100%;
+      text-align: center;
+      margin: 57px auto 32px;
+
+      .title_bigger {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__search-sub {
+    max-width: 144px;
+    width: 100%;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 5;
+    max-width: 1152px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 24px 32px;
+    border-radius: 24px;
+    box-shadow: 0px 15px 39px -31px rgba(0, 0, 0, 0.11);
+
+    @media $tablet {
+      max-width: 832px;
+      padding: 24px 32px;
+      flex-wrap: wrap;
+    }
+
+    @media $mobile {
+      max-width: 100%;
+      padding: 24px;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      @media $tablet {
+        margin-top: 16px;
+      }
+
+      @media $mobile {
+        margin-top: 0;
+        display: block;
+      }
+    }
+
+    &-price {
+      position absolute
+      display flex
+      align-items center
+      justify-content center
+      flex-direction column
+      right 16%
+      bottom 100%
+      height 240px
+      width 220px
+      padding 0 24px
+      border-radius 16px 16px 0 0
+      background-color #fff
+      overflow hidden
+      opacity 1
+      transition height .3s, opacity .2s
+
+      @media $tablet {
+        bottom 50%
+      }
+
+      @media $mobile {
+        position static
+        background-color transparent
+        border-radius 0
+        padding 0
+        height auto
+        width 100%
+        margin-top 16px
+      }
+
+      .btn {
+        width 100%
+        display block
+        // height 0
+        // overflow hidden
+      }
+
+      &.hidden {
+        height 0
+        opacity 0
+      }
+
+      &-label {
+        width 100%
+
+        @media $mobile {
+          margin-bottom 16px
+        }
+      }
+
+      &-btn {
+        display flex
+        justify-content center
+        align-items center
+        flex-shrink 0
+        background-color $gray
+        border-radius 16px
+        width 64px
+        height 64px
+        margin 0 18px
+        border 2px solid transparent
+        transition border-color .3s, background-color .3s
+
+        span {
+          pointer-events none
+        }
+
+        @media $tablet {
+          margin 0 16px
+        }
+
+        @media $mobile {
+          margin: 16px 0
+        }
+
+        .icon {
+          transition transform .3s
+        }
+
+        &.active {
+          border-color $black
+          background-color #fff
+        }
+      }
+    }
+
+    &-place {
+      max-width: 360px;
+      width: 100%;
+      margin-right: 18px;
+
+      @media $tablet {
+        max-width: 100%;
+        margin-right: 0;
+      }
+
+      @media $mobile {
+        margin-bottom: 16px;
+      }
+    }
+
+
+    .calendar {
+      max-width: 300px;
+      min-width: 286px;
+      width: 100%;
+      margin-right: 18px;
+
+      @media $tablet {
+        max-width: 296px;
+        margin-right: 16px;
+      }
+
+      @media $mobile {
+        max-width: 100%;
+        min-width: auto;
+        margin-bottom: 16px;
+        margin-right: 0;
+      }
+    }
+
+    .btn {
+      @media $mobile {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .index__map {
+	  height: 540px;
+		margin-top: -66px;
+    margin-bottom 0
+
+    @media $mobile {
+      height 446px
+      margin-top -39px
+    }
+
+    .map__btn {
+      display none
+    }
+  }
+
+  &__preview {
+    &-box {
+      display flex
+      justify-content space-between
+      flex-wrap wrap
+      align-items flex-start 
+      margin-bottom 80px
+
+      @media $mobile {
+        margin-bottom 48px
+      }
+    }
+    @media $mobile {
+      &-wrapper {
+        order 0
+        margin-bottom 32px
+        padding 0 24px
+      }
+
+      .btn {
+        order 3
+        margin-top 16px
+        padding-left 10px
+        padding-right 10px
+        margin-left 24px
+      }
+
+      .suggestions {
+        order 2
+      }
+    }
+  }
+
+  .banner {
+    margin-bottom: 80px;
+
+    @media $mobile {
+      margin-bottom: 52px;
+    }
+  }
+
+  .performance {
+    margin-bottom: 80px;
+  }
+
+  &__info {
+    display: flex;
+
+    @media $mobile {
+      display block
+    }
+
+    &-inner {
+      max-width: 752px;
+      margin-right: var(--offset-up-mid);
+
+      @media $mobile {
+        max-width 100%
+        margin-right 0
+        margin-bottom 48px
+
+        .title_up-middle {
+          margin-bottom 16px
+        }
+      }
+    }
+
+    &-text {
+      margin-bottom: 32px;
+
+      @media $mobile {
+        margin-bottom 20px
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-btn {
+      font-size 16px
+      line-height 48px
+      color $green
+    }
+
+
+    @media $mobile {
+      &-descr {
+        max-height 2000px
+        overflow hidden
+        transition max-height .5s
+
+        &.hidden {
+          max-height 240px
+        }
+      }
+    }
+  }
+  @media $mobile {
+    &__group {
+      .title_up-middle {
+        margin-bottom 24px
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.create {
+  &__inner {
+    width: 100%;
+  }
+  
+  .form__description {
+    height: 200px;
+  }
+
+  .create__list {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media $mobile {
+        flex-wrap: wrap;
+      }
+
+      .form__wrapper {
+        max-width: 49%;
+        width: 100%;
+
+        @media $mobile {
+          max-width: 100%;
+          order: 3;
+        }
+      }
+
+      .select {
+        max-width: 49%;
+        margin-right: 32px;
+        flex-shrink: 0;
+
+        @media $mobile {
+          max-width: 85%;
+          margin-right: 0;
+          margin-bottom: 24px;
+          order: 1;
+        }
+      }
+
+      &:first-child .select {
+        @media $mobile {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &-delete {
+      margin-left: 32px;
+
+      @media $mobile {
+        float: right;
+        margin-left: 0;
+        margin-bottom: 24px;
+        order: 2;
+      }
+    }
+  }
+  
+  &__item {
+    overflow: hidden;
+    height: 0;
+    opacity 0
+    transition: opacity .5s, height 0.5s, border-color .3s;
+
+    &.active {
+      height: auto;
+      overflow: visible;
+      opacity  1
+    }
+  }
+
+  &__btns {
+    margin-top: 56px;
+  }
+}
+
+@media $mobile {
+  .create {
+    &__item {
+      opacity 1
+      height: auto;
+      margin-top: 16px;
+      background-color: #fff;
+      border-radius: 8px 16px 16px 8px;
+      border-left 8px solid #C8C8C8
+
+      &.mistake {
+        border-color: #F72921;
+      }
+
+      &.completed {
+        border-color $green
+      }
+
+      &-header {
+        display flex
+        justify-content space-between
+        align-items center
+        padding: 24px;
+        transition padding .5s, margin .5s
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &.active {
+        .create__item-header {
+          padding-bottom 0
+          margin-bottom 12px
+        }
+
+        .create__wrapper {
+          opacity 1
+        }
+
+        .create__content {
+          overflow: visible;
+          padding-bottom 24px
+        }
+      }
+    }
+
+    &__content {
+      transition height .5s, min-height .5s, opacity .5s, padding .5s
+      // transition-delay: 3s
+      padding 0 24px
+    }
+
+    &__wrapper { 
+      transition opacity .3s
+      opacity 0
+      transition-delay .3s
+    }
+
+    &__btns {
+      grid-gap: 16px;
+      margin-top 32px
+      margin-bottom 24px
+    }
+  }
+}

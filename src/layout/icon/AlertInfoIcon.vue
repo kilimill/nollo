@@ -1,0 +1,27 @@
+<template>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g opacity="0.72">
+      <circle cx="12" cy="12" r="11" stroke="#F72921" stroke-width="2" />
+      <path
+        d="M12 7V12"
+        stroke="#F72921"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 16V16.5"
+        stroke="#F72921"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+</template>

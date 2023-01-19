@@ -1,0 +1,74 @@
+.accordion 
+  &__item
+    padding var(--offset-mid)
+    border 2px solid transparent
+    border-radius var(--radius-def)
+    background-color $gray
+    transition background-color .3s, border-color .3s
+    overflow hidden
+    margin-top 24px
+
+    &:first-child
+      margin-top 0
+
+    &.open
+      background-color #fff
+      border-color #BFFDE3
+
+      .accordion__bottom
+        margin-top 16px
+        height auto
+        opacity 1
+        overflow hidden
+
+      .accordion__btn
+        &::before
+          opacity 0
+          transform rotate(-90deg)
+
+        &::after
+          opacity 1
+          transform rotate(0)
+
+  &__top
+    pointer-events none
+
+  &__bottom
+    margin-top 0
+    height 0
+    overflow hidden
+    opacity 0
+    transition margin .3s, height .3s, opacity .2s
+
+  &__btn
+    pos relative
+    width 24px
+    height 24px
+
+    &::before,
+    &::after
+      content ''
+      pos absolute
+      left 0
+      transition opacity .3s, transform .3s
+
+    &::before
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 3V21' stroke='%23444444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 12L21 12' stroke='%23444444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      width  24px
+      height 24px
+      transform rotate(0)
+      top 0
+      opacity 1
+
+    &::after
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L19 1.00929' stroke='%23222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      width 20px
+      height 3px
+      top 43%
+      left 9%
+      transform rotate(90deg)
+      opacity 0
+
+  &_white
+    .accordion__item 
+      background-color #FFFFFF

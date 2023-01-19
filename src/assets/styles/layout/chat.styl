@@ -1,0 +1,198 @@
+@import '../vars.styl';
+
+.chat {
+  width 100%
+  min-height: 926px;
+  border-radius: var(--radius-def);
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  background-color: #FFFFFF;
+
+  &__message {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--left {
+      justify-content: flex-end;
+
+      .chat__message-item {
+        border-radius: var(--radius-12) var(--radius-12) 0px var(--radius-12);
+      }
+
+      .chat__message-info {
+        margin-right: 8px;
+
+        &.readed::after {
+          display: block;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &--right {
+      justify-content: flex-start;
+
+      .chat__message-item {
+        border-radius: var(--radius-12) var(--radius-12) var(--radius-12) 0px;
+      }
+
+      .chat__message-info {
+        margin-left: 8px;
+
+        &.readed::before {
+          display: block;
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-item {
+      max-width: 598px;
+      padding: 16px 24px;
+      background-color: #F5F5F5;
+    }
+
+    &-info {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+
+      &::before, &::after {
+        content: '';
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.44444L6.52326 9L14.4767 1M12.2674 9L20 1' stroke='%2306CC79' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        width: 21px;
+        height: 10px;
+        margin-bottom: 2px;
+        display: none;
+      }
+    }
+
+    &-time {
+      color: #C8C8C8;
+    }
+  }
+
+  &__header {
+    padding: 24px 32px;
+    border-bottom: 2px solid #F5F5F5;
+  }
+
+  &__user {
+    &-avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    &-info {
+      margin-left: 16px;
+    }
+  }
+
+  &__content {
+    padding: 0 24px 40px;
+
+    @media $mobile {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__hint {
+    &-btns {
+      margin-top: 40px;
+
+      @media $tablet {
+        display: block;
+      }
+
+      .btn {
+        width: 48%;
+
+        @media $tablet {
+          width: 100%;
+
+          &:first-child {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__alert {
+    border-radius: var(--radius-8);
+    margin-top: 12px;
+
+    &-header {
+      // overflow hidden
+      position relative
+      display flex
+      justify-content space-between
+      align-items center
+      padding 25px 25px 0
+      margin-bottom 12px
+    }
+
+    &-content {
+      padding: 0 24px 24px;
+    }
+
+    &-title {
+      max-width calc(100% - 40px)
+      width 100%
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--error {
+      background-color: #FFF2F7;
+      
+      .hint__ico {
+        filter: invert(77%) sepia(58%) saturate(6905%) hue-rotate(325deg) brightness(101%) contrast(96%);
+      }
+    }
+
+
+    &--success {
+      background-color: #F0FFF4;
+
+      .hint__ico {
+        filter: invert(57%) sepia(53%) saturate(1376%) hue-rotate(110deg) brightness(95%) contrast(95%);
+      }
+    }
+  }
+
+  &__form {
+    padding: 24px;
+    background-color: #FFFFFF;
+    border-top: 2px solid #F5F5F5;
+
+    @media $mobile {
+      padding: 16px 24px;
+    }
+
+    .form__label {
+      margin-right: 32px;
+      width: 100%;
+      @media $tablet {
+        margin-right 12px
+      }
+    }
+
+    .form__input {
+      margin-top: 0;
+    }
+
+    .text_middle {
+      color: #C8C8C8;
+    }
+  }
+}

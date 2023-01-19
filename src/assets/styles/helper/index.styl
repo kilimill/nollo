@@ -1,0 +1,41 @@
+@import './form.styl'
+@import './text.styl'
+@import './grid'
+@import './margin'
+@import './buttons.styl'
+@import './alert.styl'
+@import './icon.styl'
+@import './tooltip.styl'
+
+
+.opacity 
+	&-50 
+		opacity .5
+		transition opacity .3s
+	
+	&-70 
+		opacity .7
+		transition opacity .3s
+
+	&-30
+		opacity .3
+		transition opacity .3s
+
+.align
+	&-ctr
+		text-align center
+
+.wrapper
+	display flex
+
+	&_v-ctr
+		align-items center
+
+	&_h-btw
+		justify-content space-between	
+		
+.c-green
+	color $green
+
+.c-blue
+	color blue

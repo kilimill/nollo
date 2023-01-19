@@ -1,0 +1,119 @@
+.card
+  pos relative
+  width 100%
+  height 404px
+  border-radius var(--radius-def)
+  overflow hidden
+  background-color #fff
+  // margin-bottom 32px
+  transition box-shadow .3s
+
+  @media $desktop 
+    &:hover
+      .card__control:not(.selected)
+        background-color #fff
+        opacity 1
+
+      box-shadow: 0px 47px 43px -31px rgba(0, 0, 0, 0.11);
+
+  &__picture
+    cursor pointer
+    height 236px
+
+    &-draft
+      position relative
+      width 100%
+      height 100%
+      background-color #DCDCDC
+
+      &::before 
+        content ''
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        margin auto
+        width 137px
+        height 137px
+        background-image url("data:image/svg+xml,%3Csvg width='137' height='137' viewBox='0 0 137 137' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.70898 32.832C5.70898 27.3092 10.1861 22.832 15.709 22.832H121.292C126.815 22.832 131.292 27.3092 131.292 32.832V104.165C131.292 109.688 126.815 114.165 121.292 114.165H15.709C10.1861 114.165 5.70898 109.688 5.70898 104.165V32.832Z' stroke='%23C8C8C8' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M5.70898 108.458L82.2952 56.5355C86.9657 53.369 93.0181 53.0915 97.9588 55.8174L131.292 74.2083' stroke='%23C8C8C8' stroke-width='5'/%3E%3Cellipse cx='34.2493' cy='51.3763' rx='5.70833' ry='5.70833' stroke='%23C8C8C8' stroke-width='5'/%3E%3C/svg%3E%0A")
+
+  &__img
+    width 100%
+    height 100%
+    object-fit cover
+    object-position center
+
+  &__alert
+    pos absolute
+    top 25px  
+    left 23px
+    z-index 1
+    padding 8px 12px
+    border-radius var(--radius-8)
+    color #fff
+
+  &__box
+    padding var(--offset-mid)
+
+  &__title {
+    width 100%
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    display block
+    cursor pointer
+  }
+     
+  &_map 
+    width 244px
+    height 236px
+    margin-bottom 0
+    border-radius 0
+    
+    .card__img
+      height 120px
+
+    .card__box
+      padding 16px
+
+  &__control
+    position absolute
+    z-index 10
+    top 24px
+    right 24px
+    width 48px
+    height 48px
+    border-radius 12px
+    transition background-color .3s, opacity .3s
+
+    @media $desktop 
+      &:not(.selected)
+        opacity 0
+
+    .icon
+      vertical-align bottom
+
+    &:hover
+      background-color #fff
+
+    &:not(.selected)
+      &:hover .icon
+        filter: invert(9%) sepia(16%) saturate(259%) hue-rotate(323deg) brightness(105%) contrast(90%);
+
+      @media $tablet
+        background-color #fff
+
+    &.selected .icon
+      filter: none
+      fill #fff
+
+      path 
+        stroke #fff
+
+    &.selected:hover
+      .icon
+        fill $black
+        
+      .icon path 
+        stroke $black

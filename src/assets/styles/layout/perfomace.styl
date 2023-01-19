@@ -1,0 +1,35 @@
+.performance
+  display flex
+  justify-content space-between
+  
+  &__item
+    width 192px
+    min-height 176px
+    margin-left var(--offset-up-mid)
+    display flex
+    justify-content center
+    align-items center
+    flex-direction column
+    background-color #fff
+    border-radius 24px
+    flex-shrink 0
+
+    &:first-child
+      padding var(--offset-big)
+      display block
+      width 880px
+      margin-left 0
+      flex-shrink 1
+
+@media $mobile
+  .performance
+    flex-wrap wrap
+
+    &__item
+      width 48%
+      margin-left 0
+      min-height 120px
+
+      &:first-child
+        margin-bottom 24px
+        width 100%
